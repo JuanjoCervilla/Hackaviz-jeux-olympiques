@@ -1,0 +1,110 @@
+---
+title: "Lecture des fichiers de données"
+author: "Toulouse Dataviz"
+format: html
+lang: fr
+---
+
+## Lecture des fichiers de données
+
+ Pour vous aider à la lecture des fichiers de donnée dans le format parquet,
+ voici les quelques lignes à recopier pour les charger avec quelques languages
+ de traitement de données choisis:
+ 
+### Paris 2024
+
+::: {.panel-tabset group="language"}
+
+#### R
+
+```{{r}}
+library(arrow, quietly = TRUE)
+library(here, quietly = TRUE)
+paris_2024 <- read_parquet(here("data/paris_2024.parquet"))
+```
+
+#### Python
+
+```{{python}}
+import pandas as pd
+paris_2024 = pd.read_parquet("data/paris_2024.parquet")
+```
+
+#### Observable
+
+```{{ojs}}
+db = DuckDBClient.of({
+  paris_2024: FileAttachment("paris_2024.parquet")
+})
+```
+
+#### Office
+
+le fichier `paris_2024.xlsx` est prêt à étre ouvert dans LibreOffice, OpenOffice, MicrosoftOffice ou tout autre tableur.
+
+#### Autre
+
+le fichier `paris_2024.csv` est disponible pour tous les autres outils.
+
+:::
+ 
+ 
+### Restaurants proximité
+ 
+ 
+::: {.panel-tabset group="language"}
+
+#### R
+
+Le fichier est au format  [GeoParquet](https://github.com/opengeospatial/geoparquet) qui
+peut nécéssiter l'installation d'une librairie spécifique.  
+Aussi la première ligne de commande vous est optionnelle est vous indique une 
+solution pour son installation.
+
+```{{r}}
+install.packages("sfarrow")
+
+library(sfarrow, quietly = TRUE)
+library(here, quietly = TRUE)
+restaurant <- st_read_parquet(here("data/restaurants_proximité.geoparquet"))
+```
+
+#### Python
+
+Le fichier est au format  [GeoParquet](https://github.com/opengeospatial/geoparquet) qui
+peut nécéssiter l'installation d'une librairie spécifique.  
+Aussi la première ligne de commande vous est optionnelle est vous indique une 
+solution pour son installation.
+
+
+```{{shell}}
+pip install pyarrow
+pip install geopandas
+```
+
+```{{python}}
+import geopandas as gpd
+restaurant = gpd.read_parquet("data/restaurants_proximité.geoparquet")
+```
+
+#### Observable
+
+```{{ojs}}
+import {DuckDBClient} from '@cmudig/duckdb'
+
+db = DuckDBClient.of({
+  FileAttachment("restaurants_proximité.geoparquet")
+})
+```
+
+#### Office
+
+le fichier `restaurants_proximité.xlsx` est prêt à étre ouvert dans LibreOffice, OpenOffice, MicrosoftOffice ou tout autre tableur.
+
+#### Autre
+
+le fichier `restaurants_proximité.csv` est disponible pour tous les autres outils.
+
+
+:::
+ 
