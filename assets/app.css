@@ -36,13 +36,32 @@ hr {
     margin-left: 2%;
 }
 
-H5 {
-    color: #2c8cff;
-    font-weight: 300;
+#content-body {
+    display: grid;
+    grid-template-columns: 1fr 3fr; 
 }
 
-H5, H3 {
-    font-family: Acumin, "Helvetica Neue", sans-serif;
+#analysis-card {
+    background-color: #FFFFFF;
+
+}
+
+#control-card {
+    padding: 1rem;
+    
+
+}
+
+#control-card > p {
+    font-weight: bold;
+}
+
+#Dropdown_Discipline {
+    width: 300px;
+}
+
+#Dropdown_Epreuve {
+    width: 300px;
 }
 
 #left-column {
@@ -66,11 +85,6 @@ H5, H3 {
     font-size: 13px;
 }
 
-.wait_time_graph > div, .patient_score_graph > div {
-    height: 100% !important;
-    width: 100% !important;
-}
-
 .draglayer {
     cursor: pointer !important;
 }
@@ -80,48 +94,6 @@ H5, H3 {
     font-family: "Helvetica Neue", sans-serif;
     text-align: justify;
 }
-
-#control-card > p {
-    font-weight: bold;
-}
-
-#patient_volume_card, #wait_time_card {
-    background-color: #FFFFFF;
-    padding: 1rem;
-    margin: auto;
-    margin-top: 20px;
-}
-
-#patient_volume_card > b, #wait_time_card > b {
-    line-height: 2.5;
-}
-
-#wait_time_card {
-    margin: 20px 0px;
-}
-
-#patient_volume_hm {
-    height: 400px;
-}
-
-.table-row:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-.row-department > b {
-    display: table-cell;
-    vertical-align: middle;
-}
-
-#header_wait_time_min, #header_care_score {
-    display: table;
-}
-
-#header_wait_time_min > b, #header_care_score > b {
-    display: table-cell;
-    vertical-align: middle;
-}
-
 
 /*
   ##Device = Most of the Smartphones Mobiles / ipad (Portrait)

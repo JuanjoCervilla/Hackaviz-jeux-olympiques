@@ -1,0 +1,8 @@
+- Submit no click when all fields are completed 
+- Dash table only four/five items if not scroll
+- The fields are not selected by default
+
+
+https://dash.gallery/dash-clinical-analytics/
+https://github.com/plotly/dash-sample-apps/blob/main/apps/dash-clinical-analytics/app.py
+    
