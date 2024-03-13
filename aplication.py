@@ -32,7 +32,7 @@ header = dbc.Card([
     id="banner",
     className="banner",
     children=[html.Img(src=app.get_asset_url("paris_2024.png")),
-              html.H1("Jeux Olympiques Paris 2024", className="text-center"),
+              html.H1("Jeux Olympiques Paris 2024"),
               html.Img(src=app.get_asset_url("logo_jo.png")),],
         ),
 ])
@@ -121,34 +121,90 @@ generate_control_card = html.Div(
 analysis_card = html.Div(
         id="analysis-card",
         children=[
-            html.H1( id='header_session' ),
-            dcc.Graph(id='indicator_capacity',figure = {}),
-            html.P( id = 'title_session'),
-            dash_table.DataTable(id = 'listing_phase_info',
-                                    style_cell={'textAlign': 'center'},
-                                    style_as_list_view=True, 
-                                    style_header={ 'backgroundColor': 'rgb(210, 210, 210)', 'color': 'black','fontWeight': 'bold'},
-                                    style_cell_conditional=[{'if': {'column_id': 'Session'},'fontWeight': 'bold'}],
-                                    style_data_conditional=[ {'if': {'row_index': 'odd'},'backgroundColor': 'rgb(240, 240, 240)',}],
-                                    page_size=4
-                                    ),
-            dcc.Graph(id='bar_chart_prices',figure = {}),
-            dcc.Dropdown(
-                id='Dropdown_TypeRestau',
-                clearable=False,
-                optionHeight = 25,
-                maxHeight = 150,
-                placeholder= 'Sélectionnez une session',
-                multi=True,
-                ),  
-                       
+            html.Div(id='title-analysis-card',
+                     children=[html.H1( id='header_session')]),
+            html.Br(),
+            
+            html.Div(id='title-indicator-card', 
+                     children = [
+                            html.H5('Lieu'),
+                            html.H5('Capacité'),
+                            html.H5('Date'),
+                             ]
+                     ),
+            html.Div(id='indicator-card', 
+                     children = [
+                            html.H2( id = 'lieu_KPI'),
+                            html.H2( id = 'capacité_KPI'),
+                            html.H2( id = 'date_KPI'),
+                             ]
+                     ),
+            
+            html.Br(),
+            
+            html.Div(id='phases-prices-card', children=[
+                html.Div(id='phases-card', children = [
+                    html.P( id = 'title_session'),
+                    dash_table.DataTable(id = 'listing_phase_info',
+                                            style_cell={'textAlign': 'center'},
+                                            style_as_list_view=True, 
+                                            style_header={ 'backgroundColor': 'rgb(210, 210, 210)', 'color': 'black','fontWeight': 'bold'},
+                                            style_cell_conditional=[{'if': {'column_id': 'Session'},'fontWeight': 'bold'}],
+                                            style_data_conditional=[ {'if': {'row_index': 'odd'},'backgroundColor': 'rgb(240, 240, 240)',}],
+                                            page_size=4
+                                            )     
+                ]), 
+                html.Div(id='prices-card', children=[
+                    dcc.Graph(id='bar_chart_prices',figure = {}),
+                ])           
+            ]),
+
+            html.Br(),
+            
+            html.Div(id = 'restau-card', children = [
+                html.Div(id='info-restau-card', children=[
+                    
+                    html.Div(id='filter-restau-card', children=[
+                        dcc.Dropdown(
+                            id='Dropdown_TypeRestau',
+                            clearable=False,
+                            optionHeight = 25,
+                            maxHeight = 150,
+                            placeholder= 'Sélectionnez une session',
+                            multi=True,
+                            ),
+                                    
+                        dcc.RangeSlider(id = 'RangeSlider_Distance', min=0, max=1500, value=[0, 300],
+                                        tooltip={"placement": "bottom", "always_visible": True}),
+                        
+                    ]),
+                    
+                    html.Br(),
+                    
+                    html.Div(id='analysis-restau-card', children=[
+                        dash_table.DataTable(id = 'listing_restau',
+                            style_cell={'textAlign': 'center'},
+                            style_as_list_view=True, 
+                            style_header={ 'backgroundColor': 'rgb(210, 210, 210)', 'color': 'black','fontWeight': 'bold'},
+                            style_cell_conditional=[{'if': {'column_id': 'Etablissement'},'fontWeight': 'bold'}],
+                            style_data_conditional=[ {'if': {'row_index': 'odd'},'backgroundColor': 'rgb(240, 240, 240)',}],
+                            page_size=4
+                            ),
+                        dcc.Graph(id='donut_chart_typeRestau',figure = {})                        
+                    ]),
+                    
+                ]),
+                html.Div(id='map-restau-card', children=[
+                    html.H1('map here')  
+                    ]),
+            ]),
         ],
     ) 
 
 
 
 app.layout  = html.Div(
-    id='app-layout',
+    id='app-container',
     children=[
         
     header,
@@ -168,7 +224,7 @@ app.layout  = html.Div(
 ############################## CALLBACK ######################################
 ##############################################################################
 
-#Callback for Disciplines
+#Callback for Dropdown Options Disciplines
 @app.callback(
     Output("Dropdown_Discipline", "options"),
     Input("RadioItems_Jeux", "value"),
@@ -185,7 +241,7 @@ def options_dropdown_category(jeux, genre):
 
     return [{'label': x, 'value': x} for x in disciplines]
 
-
+#Callback for Dropdown Value Disciplines
 @app.callback(
     Output("Dropdown_Discipline", "value"),
     Input("RadioItems_Jeux", "value"),
@@ -203,7 +259,7 @@ def values_dropdown_category(jeux, genre):
     return disciplines[0]
 
 
-#Callback for Epreuves
+#Callback for Dropdown Options Epreuves
 @app.callback(
     Output("Dropdown_Epreuve", "options"),
     Input("RadioItems_Jeux", "value"),
@@ -222,7 +278,7 @@ def options_dropdown_category(jeux, genre, discipline):
 
     return [{'label': x, 'value': x} for x in epreuves]
 
-
+#Callback for Dropdown Value Epreuves
 @app.callback(
     Output("Dropdown_Epreuve", "value"),
     Input("RadioItems_Jeux", "value"),
@@ -240,7 +296,6 @@ def values_dropdown_category(jeux, genre, discipline):
     epreuves.sort() 
 
     return epreuves[0]
-
 
 # #Callback for Start Date calendar
 @app.callback(
@@ -277,7 +332,6 @@ def options_dropdown_category(jeux, genre, discipline, epreuve):
     df = df[df['Épreuve'] == epreuve]
     
     return dt.strptime(df['Date_Début'].min(), '%m-%d-%Y') 
-
 
 #Callback for End Date calendar
 @app.callback(
@@ -369,7 +423,7 @@ def update_datatable(jeux, genre, discipline, epreuve, start_date, end_date):
 
     return df.to_dict('records'), columns
 
-#Callback for dropdown section 
+#Callback for dropdown options session  
 @app.callback(
     Output("Dropdown_Session", "options"),
     Input("RadioItems_Jeux", "value"),
@@ -401,7 +455,7 @@ def update_datatable(jeux, genre, discipline, epreuve, start_date, end_date):
 
     return [{'label': x, 'value': x} for x in sessions]
 
-#Callback for dropdown session 
+#Callback for dropdown value session 
 @app.callback(
     Output("Dropdown_Session", "value"),
     Input("RadioItems_Jeux", "value"),
@@ -442,9 +496,9 @@ def update_first_piechart_graph(session):
     
     return f"Analyse de session {session} "
 
-#Callback capacity KPI
+#callback lieu_KPI
 @app.callback(
-    Output("indicator_capacity", "figure"),
+    Output("lieu_KPI", "children"),
     Input("Dropdown_Session", "value")
 )
 def update_first_piechart_graph(session):
@@ -452,20 +506,38 @@ def update_first_piechart_graph(session):
     df = df_jo.copy()
     df = df[df['Session'] == session]
     df.reset_index(inplace=True, drop=True)
+    lieu = df.Lieu[0]
     
-    fig = go.Figure()
+    return f"📍 {lieu} "
 
-    fig.add_trace(go.Indicator(
-    title = "Capacité",
-    mode = "number",
-    value = df.capacité[0],
-    number = {'prefix': "🏟️ ", 'valueformat': '.g'},
-    domain = {'row': 0, 'column': 0}))
+#callback date_KPI
+@app.callback(
+    Output("date_KPI", "children"),
+    Input("Dropdown_Session", "value")
+)
+def update_first_piechart_graph(session):
+    
+    df = df_jo.copy()
+    df = df[df['Session'] == session]
+    df.reset_index(inplace=True, drop=True)
+    date = df.Date_Début[0]
+    
+    return f"🗓️ {date} "
 
-    fig.update_layout(
-        grid = {'rows': 1, 'columns': 1, 'pattern': "independent"})
-                                                                                           
-    return fig
+
+# #Callback capacity KPI
+@app.callback(
+    Output("capacité_KPI", "children"),
+    Input("Dropdown_Session", "value")
+)
+def update_first_piechart_graph(session):
+    
+    df = df_jo.copy()
+    df = df[df['Session'] == session]
+    df.reset_index(inplace=True, drop=True)
+    capacity = int(df.capacité[0])
+    
+    return f"🏟️ {capacity} "
 
 #callback title session for phase
 @app.callback(
@@ -488,12 +560,12 @@ def update_datatable(session):
     df = df_jo.copy()
     df = df[df['Session'] == session]
     
-    df = df[['Session', 'Phase', 'Heure_Début', 'Heure_Fin']]
+    df = df[['Phase', 'Heure_Début', 'Heure_Fin']]
     columns = [{'id': c, 'name': c} for c in df.columns]
 
     return df.to_dict('records'), columns
 
-#callback barchart
+#callback barchart prices
 @app.callback(
     Output("bar_chart_prices", "figure"),
     Input("Dropdown_Session", "value")
@@ -506,15 +578,14 @@ def update_first_piechart_graph(session):
     sf = df.iloc[0, :]
     df = sf.to_frame()
     df.reset_index(inplace=True)
-    df.columns = ['Category', 'Value']
+    df.columns = ['Category', 'Price']
     df = df.dropna()
 
-    fig = px.bar(df, x='Category', y='Value')
+    fig = px.bar(df, x='Category', y='Price')
                                                                                                       
     return fig
 
-
-#Callback for TypeRestau
+#Callback for Dropdown Options TypeRestau
 @app.callback(
     Output("Dropdown_TypeRestau", "options"),
     Input("Dropdown_Session", "value"),
@@ -534,7 +605,7 @@ def options_dropdown_category(session):
 
     return [{'label': x, 'value': x} for x in typeRestau]
 
-
+#Callback for Dropdown Value TypeRestau
 @app.callback(
     Output("Dropdown_TypeRestau", "value"),
     Input("Dropdown_Session", "value"),
@@ -552,8 +623,61 @@ def values_dropdown_category(session):
     typeRestau = list(df_restaurant.Type.unique())
     typeRestau.sort() 
 
-    return typeRestau[0]
+    return typeRestau
 
+#Callback for listing_restau
+@app.callback(
+    Output("listing_restau", "data"),
+    Output("listing_restau", "columns"),
+    Input("Dropdown_Session", "value"),
+    Input("Dropdown_TypeRestau", "value"),
+    Input("RangeSlider_Distance", "value"),
+)
+def update_datatable(session, typeRestau, distance):
+
+    df = df_jo.copy()
+    df = df[df['Session'] == session]
+    df.reset_index(inplace=True, drop=True)
+    lieu = df.Lieu[0]
+    
+    df_restaurant = df_restau.copy()
+    df_restaurant = df_restaurant[df_restaurant['Lieu'] == lieu]
+    df_restaurant = df_restaurant[df_restaurant['Type'].isin(typeRestau)]
+    df_restaurant = df_restaurant[(df_restaurant['distance'] >= distance[0]) & (df_restaurant['distance'] <= distance[1])]
+
+    
+    df_restaurant = df_restaurant[['Etablissement', 'adresse', 'premiere_activité']]
+    columns = [{'id': c, 'name': c} for c in df_restaurant.columns]
+
+    return df_restaurant.to_dict('records'), columns
+
+#callback donut chart typeRestau
+@app.callback(
+    Output("donut_chart_typeRestau", "figure"),
+    Input("Dropdown_Session", "value"),
+    Input("Dropdown_TypeRestau", "value"),
+    Input("RangeSlider_Distance", "value")
+)
+def update_first_piechart_graph(session, typeRestau, distance):
+    
+    df = df_jo.copy()
+    df = df[df['Session'] == session]
+    df.reset_index(inplace=True, drop=True)
+    lieu = df.Lieu[0]
+    
+    df_restaurant = df_restau.copy()
+    df_restaurant = df_restaurant[df_restaurant['Lieu'] == lieu]
+    df_restaurant = df_restaurant[df_restaurant['Type'].isin(typeRestau)]
+    df_restaurant = df_restaurant[(df_restaurant['distance'] >= distance[0]) & (df_restaurant['distance'] <= distance[1])]
+    
+    type_counts = df_restaurant['Type'].value_counts()
+    
+    type_counts_df = pd.DataFrame({'Type': type_counts.index, 'Count': type_counts.values})
+
+    fig = px.pie(type_counts_df, values='Count', names='Type', hole=0.7, title='Type de restaurant')
+    fig.update_layout(showlegend=False)
+                                                                                                    
+    return fig
 
 
 
