@@ -33,7 +33,7 @@ header = dbc.Card([
     className="banner",
     children=[html.Img(src=app.get_asset_url("paris_2024.png")),
               html.H1("Jeux Olympiques Paris 2024"),
-              html.Img(src=app.get_asset_url("logo_jo.png")),],
+              html.Img(src=app.get_asset_url("logo_jo.png"))],
         ),
 ])
 
@@ -122,7 +122,7 @@ analysis_card = html.Div(
         id="analysis-card",
         children=[
             html.Div(id='title-analysis-card',
-                     children=[html.H1( id='header_session')]),
+                     children=[html.H2( id='header_session')]),
             html.Br(),
             
             html.Div(id='title-indicator-card', 
@@ -141,23 +141,24 @@ analysis_card = html.Div(
                      ),
             
             html.Br(),
+            html.Br(),
+            html.Br(),
             
             html.Div(id='phases-prices-card', children=[
-                html.Div(id='phases-card', children = [
-                    html.P( id = 'title_session'),
+                    html.H4( id = 'title_session'),
+                    html.H4(id='title_price'),
                     dash_table.DataTable(id = 'listing_phase_info',
                                             style_cell={'textAlign': 'center'},
                                             style_as_list_view=True, 
                                             style_header={ 'backgroundColor': 'rgb(210, 210, 210)', 'color': 'black','fontWeight': 'bold'},
                                             style_cell_conditional=[{'if': {'column_id': 'Session'},'fontWeight': 'bold'}],
                                             style_data_conditional=[ {'if': {'row_index': 'odd'},'backgroundColor': 'rgb(240, 240, 240)',}],
-                                            page_size=4
-                                            )     
-                ]), 
-                html.Div(id='prices-card', children=[
-                    dcc.Graph(id='bar_chart_prices',figure = {}),
-                ])           
-            ]),
+                                            #page_size=4,
+                                            #fixed_rows={'headers': True},
+                                            style_table={'overflowX': 'auto'}  
+                                            ),
+                    dcc.Graph(id='bar_chart_prices',figure = {}),   
+                ]),                              
 
             html.Br(),
             
@@ -165,6 +166,8 @@ analysis_card = html.Div(
                 html.Div(id='info-restau-card', children=[
                     
                     html.Div(id='filter-restau-card', children=[
+                        html.H3('Filtre pour le type de restaurant'),
+                        html.H3(id='distance-restau'),
                         dcc.Dropdown(
                             id='Dropdown_TypeRestau',
                             clearable=False,
@@ -180,8 +183,12 @@ analysis_card = html.Div(
                     ]),
                     
                     html.Br(),
+                    html.Br(),
+                    html.Br(),
                     
                     html.Div(id='analysis-restau-card', children=[
+                        html.H3('Liste des restaurants disponibles'),
+                        html.H3('Type de restaurant selon les critères'),
                         dash_table.DataTable(id = 'listing_restau',
                             style_cell={'textAlign': 'center'},
                             style_as_list_view=True, 
@@ -494,7 +501,7 @@ def update_datatable(jeux, genre, discipline, epreuve, start_date, end_date):
 )
 def update_first_piechart_graph(session):
     
-    return f"Analyse de session {session} "
+    return f"Analyse de Session {session} "
 
 #callback lieu_KPI
 @app.callback(
@@ -524,7 +531,6 @@ def update_first_piechart_graph(session):
     
     return f"🗓️ {date} "
 
-
 # #Callback capacity KPI
 @app.callback(
     Output("capacité_KPI", "children"),
@@ -546,7 +552,16 @@ def update_first_piechart_graph(session):
 )
 def update_first_piechart_graph(session):
     
-    return f"Quels sont les phases compris dans ce session {session} ?"
+    return f"Phases compris dans la session {session}"
+
+#callback title session for phase
+@app.callback(
+    Output("title_price", "children"),
+    Input("Dropdown_Session", "value")
+)
+def update_first_piechart_graph(session):
+    
+    return f"Prix par category pour la session {session} "
 
 
 # Callback listing phase
@@ -581,9 +596,24 @@ def update_first_piechart_graph(session):
     df.columns = ['Category', 'Price']
     df = df.dropna()
 
-    fig = px.bar(df, x='Category', y='Price')
+    fig = px.bar(df, x='Category', y='Price', width=800, height=400)
                                                                                                       
     return fig
+
+# #Callback capacity KPI
+@app.callback(
+    Output("distance-restau", "children"),
+    Input("Dropdown_Session", "value")
+)
+def update_first_piechart_graph(session):
+    
+    df = df_jo.copy()
+    df = df[df['Session'] == session]
+    df.reset_index(inplace=True, drop=True) 
+    lieu = df.Lieu[0]
+    
+    return f"Filtre pour la distance par rappport à {lieu} "
+
 
 #Callback for Dropdown Options TypeRestau
 @app.callback(
@@ -644,7 +674,6 @@ def update_datatable(session, typeRestau, distance):
     df_restaurant = df_restaurant[df_restaurant['Lieu'] == lieu]
     df_restaurant = df_restaurant[df_restaurant['Type'].isin(typeRestau)]
     df_restaurant = df_restaurant[(df_restaurant['distance'] >= distance[0]) & (df_restaurant['distance'] <= distance[1])]
-
     
     df_restaurant = df_restaurant[['Etablissement', 'adresse', 'premiere_activité']]
     columns = [{'id': c, 'name': c} for c in df_restaurant.columns]
@@ -663,7 +692,7 @@ def update_first_piechart_graph(session, typeRestau, distance):
     df = df_jo.copy()
     df = df[df['Session'] == session]
     df.reset_index(inplace=True, drop=True)
-    lieu = df.Lieu[0]
+    lieu = df.Lieu[0]                                                                               
     
     df_restaurant = df_restau.copy()
     df_restaurant = df_restaurant[df_restaurant['Lieu'] == lieu]
@@ -674,9 +703,8 @@ def update_first_piechart_graph(session, typeRestau, distance):
     
     type_counts_df = pd.DataFrame({'Type': type_counts.index, 'Count': type_counts.values})
 
-    fig = px.pie(type_counts_df, values='Count', names='Type', hole=0.7, title='Type de restaurant')
+    fig = px.pie(type_counts_df, values='Count', names='Type', hole=0.7)
     fig.update_layout(showlegend=False)
-                                                                                                    
     return fig
 
 
