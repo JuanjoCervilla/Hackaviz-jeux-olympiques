@@ -197,7 +197,7 @@ analysis_card = html.Div(
                         style={'textAlign': 'center'},
                         ),
                     html.Div(id='RangSlider_Div', children = [
-                        dcc.RangeSlider(id = 'RangeSlider_Distance', min=0, max=1500, value=[0, 300],
+                        dcc.RangeSlider(id = 'RangeSlider_Distance', min=0, max=1500, value=[0, 600],
                                     tooltip={"placement": "bottom", "always_visible": True}),
                     ], style = {'width': '100%', 'display': 'flex', 'align-items': 'center', 'justify-content': 'center'})            
  
@@ -222,6 +222,11 @@ analysis_card = html.Div(
                         ),
                     dcc.Graph(id='donut_chart_typeRestau',figure = {})                        
                 ]),
+                
+                html.H4('Restaurants autour du site où se déroule la session'),
+                html.Div(id='map_restau', children=[
+                    dcc.Graph(id='map_chart',figure = {})
+                ], style = {'width': '100%', 'display': 'flex', 'align-items': 'center', 'justify-content': 'center'})
             ]),
         ],
     ) 
@@ -725,6 +730,42 @@ def update_first_piechart_graph(session, typeRestau, distance):
     fig.update_layout(showlegend=False)
     return fig
 
+
+#callback map
+@app.callback(
+    Output("map_chart", "figure"),
+    Input("Dropdown_Session", "value"),
+    Input("Dropdown_TypeRestau", "value"),
+    Input("RangeSlider_Distance", "value")
+)
+def update_first_piechart_graph(session, typeRestau, distance):
+    
+    df = df_jo.copy()
+    df = df[df['Session'] == session]
+    df.reset_index(inplace=True, drop=True)
+    lieu = df.Lieu[0]
+    longitude = df.longitude[0]  
+    latitude = df.latitude[0]    
+    data = {'Etablissement': [lieu],
+        'latitude': [latitude],
+        'longitude': [longitude]}
+    df2 = pd.DataFrame(data)                                                                     
+    
+    df_restaurant = df_restau.copy()
+    df_restaurant = df_restaurant[df_restaurant['Lieu'] == lieu]
+    df_restaurant = df_restaurant[df_restaurant['Type'].isin(typeRestau)]
+    df_restaurant = df_restaurant[(df_restaurant['distance'] >= distance[0]) & (df_restaurant['distance'] <= distance[1])]
+    df1 = df_restaurant[['Etablissement', 'latitude', 'longitude']]
+    
+    concatenated_df = pd.concat([df1, df2], keys=['df1', 'df2'])
+    concatenated_df['dataset'] = concatenated_df.index.get_level_values(0)
+    
+    fig = px.scatter_mapbox(concatenated_df, lat="latitude", lon="longitude", hover_name="Etablissement",color="dataset",
+                    color_discrete_map={"df1": "blue", "df2": "red"}, zoom=10, height=600, width=1500)
+    #hover_data=["premiere_activité", "adresse"]
+    fig.update_layout(mapbox_style="open-street-map", showlegend=False)
+    
+    return fig
 
 
 if __name__=='__main__':
