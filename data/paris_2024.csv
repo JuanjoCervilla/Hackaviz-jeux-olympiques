@@ -1,6 +1,6 @@
 Jeux,Discipline,Épreuve,Phase,Genre,Début,Fin,Lieu,Session,latitude,longitude,ville,capacité,Enjeu,Catégorie_First,Catégorie_A,Catégorie_B,Catégorie_C,Catégorie_D,Catégorie_E+,Catégorie_E,Catégorie_First_PFR,Catégorie_A_PFR,Catégorie_B_PFR
 Olympiques,Cérémonie,Cérémonie d'ouverture,,Mixte,2024-07-26T20:00:00Z,2024-07-26T23:15:00Z,Quais de Seine,OOC01,48.8634,2.3049,Paris (75),326000,Cérémonie,,2700,1600,900,500,250,90,,,
-Olympiques,Cérémonie,Cérémonie de clôture,,Mixte,2024-08-11T20:00:00Z,2024-08-11T23:15:00Z,Stade de France,OOC01,48.924388,2.3598709999999996,Saint-Denis (93),77083,Cérémonie,,2700,1600,900,500,250,90,,,
+Olympiques,Cérémonie,Cérémonie de clôture,,Mixte,2024-08-11T20:00:00Z,2024-08-11T23:15:00Z,Stade de France,OCC01,48.924388,2.3598709999999996,Saint-Denis (93),77083,Cérémonie,,2700,1600,900,500,250,90,,,
 Olympiques,Athlétisme,20 km marche,finale,Hommes,2024-08-01T07:30:00Z,2024-08-01T11:05:00Z,Trocadéro,ATH01,48.856261999999994,2.2914,Paris (75),3349,Qualifications,,200,130,75,40,,,,,
 Olympiques,Athlétisme,20 km marche,finale,Femmes,2024-08-01T07:30:00Z,2024-08-01T11:05:00Z,Trocadéro,ATH01,48.856261999999994,2.2914,Paris (75),3349,Qualifications,,200,130,75,40,,,,,
 Olympiques,Athlétisme,Décathlon  100 m,,Hommes,2024-08-02T10:00:00Z,2024-08-02T13:00:00Z,Stade de France,ATH02,48.924388,2.3598709999999996,Saint-Denis (93),77083,Médailles,,690,385,195,85,,,,,
@@ -41,7 +41,6 @@ Olympiques,Athlétisme,200 m,1er tour,Femmes,2024-08-04T10:00:00Z,2024-08-04T13:
 Olympiques,Athlétisme,Saut en longueur,qualifications,Hommes,2024-08-04T10:00:00Z,2024-08-04T13:15:00Z,Stade de France,ATH06,48.924388,2.3598709999999996,Saint-Denis (93),77083,Médailles,,980,525,295,125,,,,,
 Olympiques,Athlétisme,110 m haies,1er tour,Hommes,2024-08-04T10:00:00Z,2024-08-04T13:15:00Z,Stade de France,ATH06,48.924388,2.3598709999999996,Saint-Denis (93),77083,Médailles,,980,525,295,125,,,,,
 Olympiques,Athlétisme,400 m haies,1er tour,Femmes,2024-08-04T10:00:00Z,2024-08-04T13:15:00Z,Stade de France,ATH06,48.924388,2.3598709999999996,Saint-Denis (93),77083,Médailles,,980,525,295,125,,,,,
-Olympiques,Athlétisme,110 m haies,1er tour,Hommes,2024-08-04T10:00:00Z,2024-08-04T13:15:00Z,Stade de France,ATH06,48.924388,2.3598709999999996,Saint-Denis (93),77083,Médailles,,980,525,295,125,,,,,
 Olympiques,Athlétisme,400 m,1er tour,Hommes,2024-08-04T18:30:00Z,2024-08-04T22:00:00Z,Stade de France,ATH07,48.924388,2.3598709999999996,Saint-Denis (93),77083,Qualifications,,170,90,50,24,,,,,
 Olympiques,Athlétisme,Saut en hauteur,finale,Femmes,2024-08-04T18:30:00Z,2024-08-04T22:00:00Z,Stade de France,ATH07,48.924388,2.3598709999999996,Saint-Denis (93),77083,Qualifications,,170,90,50,24,,,,,
 Olympiques,Athlétisme,100 m,demi-finales,Hommes,2024-08-04T18:30:00Z,2024-08-04T22:00:00Z,Stade de France,ATH07,48.924388,2.3598709999999996,Saint-Denis (93),77083,Qualifications,,170,90,50,24,,,,,
@@ -338,39 +337,39 @@ Olympiques,Basketball,,match pour la médaille de bronze,Hommes,2024-08-10T11:00
 Olympiques,Basketball,,match pour la médaille d'or,Hommes,2024-08-10T21:30:00Z,2024-08-10T00:00:00Z,Arena Bercy,BKB41,48.838649,2.3784959999999997,Paris (75),15000,Médailles,,980,525,295,125,,,,,
 Olympiques,Basketball,,match pour la médaille de bronze,Femmes,2024-08-11T11:30:00Z,2024-08-11T13:30:00Z,Arena Bercy,BKB42,48.838649,2.3784959999999997,Paris (75),15000,Médailles,,305,215,150,85,,,,,
 Olympiques,Basketball,,match pour la médaille d'or,Femmes,2024-08-11T15:30:00Z,2024-08-11T18:00:00Z,Arena Bercy,BKB43,48.838649,2.3784959999999997,Paris (75),15000,Médailles,,510,325,195,95,,,,,
-Olympiques,Basketball 3x3,,matches de poule (2 matchs),Femmes,2024-07-30T17:30:00Z,2024-07-30T19:30:00Z,Concorde,BKB01,48.865589,2.3212049999999995,Paris (75),37000,Qualifications,,120,90,50,24,,,,,
-Olympiques,Basketball 3x3,,matches de poule (2 matchs),Hommes,2024-07-30T17:30:00Z,2024-07-30T19:30:00Z,Concorde,BKB01,48.865589,2.3212049999999995,Paris (75),37000,Qualifications,,120,90,50,24,,,,,
-Olympiques,Basketball 3x3,,matches de poule (2 matchs),Femmes,2024-07-30T21:00:00Z,2024-07-30T23:00:00Z,Concorde,BKB02,48.865589,2.3212049999999995,Paris (75),37000,Qualifications,,120,90,50,24,,,,,
-Olympiques,Basketball 3x3,,matches de poule (2 matchs),Hommes,2024-07-30T21:00:00Z,2024-07-30T23:00:00Z,Concorde,BKB02,48.865589,2.3212049999999995,Paris (75),37000,Qualifications,,120,90,50,24,,,,,
-Olympiques,Basketball 3x3,,matches de poule (2 matchs),Femmes,2024-07-31T17:30:00Z,2024-07-31T19:30:00Z,Concorde,BKB03,48.865589,2.3212049999999995,Paris (75),37000,Qualifications,,120,90,50,24,,,,,
-Olympiques,Basketball 3x3,,matches de poule (2 matchs),Hommes,2024-07-31T17:30:00Z,2024-07-31T19:30:00Z,Concorde,BKB03,48.865589,2.3212049999999995,Paris (75),37000,Qualifications,,120,90,50,24,,,,,
-Olympiques,Basketball 3x3,,matches de poule (2 matchs),Femmes,2024-07-31T21:00:00Z,2024-07-31T23:00:00Z,Concorde,BKB04,48.865589,2.3212049999999995,Paris (75),37000,Qualifications,,120,90,50,24,,,,,
-Olympiques,Basketball 3x3,,matches de poule (2 matchs),Hommes,2024-07-31T21:00:00Z,2024-07-31T23:00:00Z,Concorde,BKB04,48.865589,2.3212049999999995,Paris (75),37000,Qualifications,,120,90,50,24,,,,,
-Olympiques,Basketball 3x3,,matches de poule (2 matchs),Femmes,2024-07-31T09:00:00Z,2024-07-31T11:00:00Z,Concorde,BKB05,48.865589,2.3212049999999995,Paris (75),37000,Qualifications,,120,90,50,24,,,,,
-Olympiques,Basketball 3x3,,matches de poule (2 matchs),Hommes,2024-07-31T09:00:00Z,2024-07-31T11:00:00Z,Concorde,BKB05,48.865589,2.3212049999999995,Paris (75),37000,Qualifications,,120,90,50,24,,,,,
-Olympiques,Basketball 3x3,,matches de poule (2 matchs),Femmes,2024-07-31T12:30:00Z,2024-07-31T14:30:00Z,Concorde,BKB06,48.865589,2.3212049999999995,Paris (75),37000,Qualifications,,120,90,50,24,,,,,
-Olympiques,Basketball 3x3,,matches de poule (2 matchs),Hommes,2024-07-31T12:30:00Z,2024-07-31T14:30:00Z,Concorde,BKB06,48.865589,2.3212049999999995,Paris (75),37000,Qualifications,,120,90,50,24,,,,,
-Olympiques,Basketball 3x3,,matches de poule (2 matchs),Femmes,2024-07-31T18:00:00Z,2024-07-31T20:00:00Z,Concorde,BKB07,48.865589,2.3212049999999995,Paris (75),37000,Qualifications,,120,90,50,24,,,,,
-Olympiques,Basketball 3x3,,matches de poule (2 matchs),Hommes,2024-07-31T18:00:00Z,2024-07-31T20:00:00Z,Concorde,BKB07,48.865589,2.3212049999999995,Paris (75),37000,Qualifications,,120,90,50,24,,,,,
-Olympiques,Basketball 3x3,,matches de poule (2 matchs),Femmes,2024-07-31T21:30:00Z,2024-07-31T23:30:00Z,Concorde,BKB08,48.865589,2.3212049999999995,Paris (75),37000,Qualifications,,120,90,50,24,,,,,
-Olympiques,Basketball 3x3,,matches de poule (2 matchs),Hommes,2024-07-31T21:30:00Z,2024-07-31T23:30:00Z,Concorde,BKB08,48.865589,2.3212049999999995,Paris (75),37000,Qualifications,,120,90,50,24,,,,,
-Olympiques,Basketball 3x3,,matches de poule (2 matchs),Femmes,2024-07-31T09:00:00Z,2024-07-31T11:00:00Z,Concorde,BKB09,48.865589,2.3212049999999995,Paris (75),37000,Qualifications,,120,90,50,24,,,,,
-Olympiques,Basketball 3x3,,matches de poule (2 matchs),Hommes,2024-07-31T09:00:00Z,2024-07-31T11:00:00Z,Concorde,BKB09,48.865589,2.3212049999999995,Paris (75),37000,Qualifications,,120,90,50,24,,,,,
-Olympiques,Basketball 3x3,,matches de poule (2 matchs),Femmes,2024-07-31T12:30:00Z,2024-07-31T14:30:00Z,Concorde,BKB10,48.865589,2.3212049999999995,Paris (75),37000,Qualifications,,120,90,50,24,,,,,
-Olympiques,Basketball 3x3,,matches de poule (2 matchs),Hommes,2024-07-31T12:30:00Z,2024-07-31T14:30:00Z,Concorde,BKB10,48.865589,2.3212049999999995,Paris (75),37000,Qualifications,,120,90,50,24,,,,,
-Olympiques,Basketball 3x3,,matches de poule (2 matchs),Femmes,2024-07-31T17:30:00Z,2024-07-31T19:30:00Z,Concorde,BKB11,48.865589,2.3212049999999995,Paris (75),37000,Qualifications,,120,90,50,24,,,,,
-Olympiques,Basketball 3x3,,matches de poule (2 matchs),Hommes,2024-07-31T17:30:00Z,2024-07-31T19:30:00Z,Concorde,BKB11,48.865589,2.3212049999999995,Paris (75),37000,Qualifications,,120,90,50,24,,,,,
-Olympiques,Basketball 3x3,,matches de poule (2 matchs),Femmes,2024-07-31T21:00:00Z,2024-07-31T23:00:00Z,Concorde,BKB12,48.865589,2.3212049999999995,Paris (75),37000,Qualifications,,120,90,50,24,,,,,
-Olympiques,Basketball 3x3,,matches de poule (2 matchs),Hommes,2024-07-31T21:00:00Z,2024-07-31T23:00:00Z,Concorde,BKB12,48.865589,2.3212049999999995,Paris (75),37000,Qualifications,,120,90,50,24,,,,,
-Olympiques,Basketball 3x3,,matches de poule (4 matchs),Femmes,2024-07-31T17:30:00Z,2024-07-31T19:30:00Z,Concorde,BKB13,48.865589,2.3212049999999995,Paris (75),37000,Qualifications,,120,90,50,24,,,,,
-Olympiques,Basketball 3x3,,play in (2 matchs),Femmes,2024-07-31T21:30:00Z,2024-07-31T22:30:00Z,Concorde,BKB14,48.865589,2.3212049999999995,Paris (75),37000,Qualifications,,130,95,65,40,,,,,
-Olympiques,Basketball 3x3,,matches de poule (4 matches),Hommes,2024-07-31T17:30:00Z,2024-07-31T19:30:00Z,Concorde,BKB15,48.865589,2.3212049999999995,Paris (75),37000,Qualifications,,120,90,50,24,,,,,
-Olympiques,Basketball 3x3,,play in (2 matchs),Hommes,2024-07-31T21:30:00Z,2024-07-31T22:30:00Z,Concorde,BKB16,48.865589,2.3212049999999995,Paris (75),37000,Qualifications,,130,95,65,40,,,,,
-Olympiques,Basketball 3x3,,demi-finales,Mixte,2024-07-31T17:30:00Z,2024-07-31T19:30:00Z,Concorde,BKB17,48.865589,2.3212049999999995,Paris (75),37000,Qualifications,,160,120,80,50,,,,,
-Olympiques,Basketball 3x3,,match pour la médaille de bronze,Femmes,2024-07-31T21:00:00Z,2024-07-31T23:20:00Z,Concorde,BKB18,48.865589,2.3212049999999995,Paris (75),37000,Médailles,,190,145,95,50,,,,,
-Olympiques,Basketball 3x3,,match pour la médaille de bronze,Hommes,2024-07-31T21:00:00Z,2024-07-31T23:20:00Z,Concorde,BKB18,48.865589,2.3212049999999995,Paris (75),37000,Médailles,,190,145,95,50,,,,,
-Olympiques,Basketball 3x3,,match pour la médaille d'or,Femmes,2024-07-31T21:00:00Z,2024-07-31T23:20:00Z,Concorde,BKB18,48.865589,2.3212049999999995,Paris (75),37000,Médailles,,190,145,95,50,,,,,
-Olympiques,Basketball 3x3,,match pour la médaille d'or,Hommes,2024-07-31T21:00:00Z,2024-07-31T23:20:00Z,Concorde,BKB18,48.865589,2.3212049999999995,Paris (75),37000,Médailles,,190,145,95,50,,,,,
+Olympiques,Basketball 3x3,,matches de poule (2 matchs),Femmes,2024-07-30T17:30:00Z,2024-07-30T19:30:00Z,Concorde,BK301,48.865589,2.3212049999999995,Paris (75),25000,Qualifications,,120,90,50,24,,,,,
+Olympiques,Basketball 3x3,,matches de poule (2 matchs),Hommes,2024-07-30T17:30:00Z,2024-07-30T19:30:00Z,Concorde,BK301,48.865589,2.3212049999999995,Paris (75),25000,Qualifications,,120,90,50,24,,,,,
+Olympiques,Basketball 3x3,,matches de poule (2 matchs),Femmes,2024-07-30T21:00:00Z,2024-07-30T23:00:00Z,Concorde,BK302,48.865589,2.3212049999999995,Paris (75),25000,Qualifications,,120,90,50,24,,,,,
+Olympiques,Basketball 3x3,,matches de poule (2 matchs),Hommes,2024-07-30T21:00:00Z,2024-07-30T23:00:00Z,Concorde,BK302,48.865589,2.3212049999999995,Paris (75),25000,Qualifications,,120,90,50,24,,,,,
+Olympiques,Basketball 3x3,,matches de poule (2 matchs),Femmes,2024-07-31T17:30:00Z,2024-07-31T19:30:00Z,Concorde,BK303,48.865589,2.3212049999999995,Paris (75),25000,Qualifications,,120,90,50,24,,,,,
+Olympiques,Basketball 3x3,,matches de poule (2 matchs),Hommes,2024-07-31T17:30:00Z,2024-07-31T19:30:00Z,Concorde,BK303,48.865589,2.3212049999999995,Paris (75),25000,Qualifications,,120,90,50,24,,,,,
+Olympiques,Basketball 3x3,,matches de poule (2 matchs),Femmes,2024-07-31T21:00:00Z,2024-07-31T23:00:00Z,Concorde,BK304,48.865589,2.3212049999999995,Paris (75),25000,Qualifications,,120,90,50,24,,,,,
+Olympiques,Basketball 3x3,,matches de poule (2 matchs),Hommes,2024-07-31T21:00:00Z,2024-07-31T23:00:00Z,Concorde,BK304,48.865589,2.3212049999999995,Paris (75),25000,Qualifications,,120,90,50,24,,,,,
+Olympiques,Basketball 3x3,,matches de poule (2 matchs),Femmes,2024-07-31T09:00:00Z,2024-07-31T11:00:00Z,Concorde,BK305,48.865589,2.3212049999999995,Paris (75),25000,Qualifications,,120,90,50,24,,,,,
+Olympiques,Basketball 3x3,,matches de poule (2 matchs),Hommes,2024-07-31T09:00:00Z,2024-07-31T11:00:00Z,Concorde,BK305,48.865589,2.3212049999999995,Paris (75),25000,Qualifications,,120,90,50,24,,,,,
+Olympiques,Basketball 3x3,,matches de poule (2 matchs),Femmes,2024-07-31T12:30:00Z,2024-07-31T14:30:00Z,Concorde,BK306,48.865589,2.3212049999999995,Paris (75),25000,Qualifications,,120,90,50,24,,,,,
+Olympiques,Basketball 3x3,,matches de poule (2 matchs),Hommes,2024-07-31T12:30:00Z,2024-07-31T14:30:00Z,Concorde,BK306,48.865589,2.3212049999999995,Paris (75),25000,Qualifications,,120,90,50,24,,,,,
+Olympiques,Basketball 3x3,,matches de poule (2 matchs),Femmes,2024-07-31T18:00:00Z,2024-07-31T20:00:00Z,Concorde,BK307,48.865589,2.3212049999999995,Paris (75),25000,Qualifications,,120,90,50,24,,,,,
+Olympiques,Basketball 3x3,,matches de poule (2 matchs),Hommes,2024-07-31T18:00:00Z,2024-07-31T20:00:00Z,Concorde,BK307,48.865589,2.3212049999999995,Paris (75),25000,Qualifications,,120,90,50,24,,,,,
+Olympiques,Basketball 3x3,,matches de poule (2 matchs),Femmes,2024-07-31T21:30:00Z,2024-07-31T23:30:00Z,Concorde,BK308,48.865589,2.3212049999999995,Paris (75),25000,Qualifications,,120,90,50,24,,,,,
+Olympiques,Basketball 3x3,,matches de poule (2 matchs),Hommes,2024-07-31T21:30:00Z,2024-07-31T23:30:00Z,Concorde,BK308,48.865589,2.3212049999999995,Paris (75),25000,Qualifications,,120,90,50,24,,,,,
+Olympiques,Basketball 3x3,,matches de poule (2 matchs),Femmes,2024-07-31T09:00:00Z,2024-07-31T11:00:00Z,Concorde,BK309,48.865589,2.3212049999999995,Paris (75),25000,Qualifications,,120,90,50,24,,,,,
+Olympiques,Basketball 3x3,,matches de poule (2 matchs),Hommes,2024-07-31T09:00:00Z,2024-07-31T11:00:00Z,Concorde,BK309,48.865589,2.3212049999999995,Paris (75),25000,Qualifications,,120,90,50,24,,,,,
+Olympiques,Basketball 3x3,,matches de poule (2 matchs),Femmes,2024-07-31T12:30:00Z,2024-07-31T14:30:00Z,Concorde,BK310,48.865589,2.3212049999999995,Paris (75),25000,Qualifications,,120,90,50,24,,,,,
+Olympiques,Basketball 3x3,,matches de poule (2 matchs),Hommes,2024-07-31T12:30:00Z,2024-07-31T14:30:00Z,Concorde,BK310,48.865589,2.3212049999999995,Paris (75),25000,Qualifications,,120,90,50,24,,,,,
+Olympiques,Basketball 3x3,,matches de poule (2 matchs),Femmes,2024-07-31T17:30:00Z,2024-07-31T19:30:00Z,Concorde,BK311,48.865589,2.3212049999999995,Paris (75),25000,Qualifications,,120,90,50,24,,,,,
+Olympiques,Basketball 3x3,,matches de poule (2 matchs),Hommes,2024-07-31T17:30:00Z,2024-07-31T19:30:00Z,Concorde,BK311,48.865589,2.3212049999999995,Paris (75),25000,Qualifications,,120,90,50,24,,,,,
+Olympiques,Basketball 3x3,,matches de poule (2 matchs),Femmes,2024-07-31T21:00:00Z,2024-07-31T23:00:00Z,Concorde,BK312,48.865589,2.3212049999999995,Paris (75),25000,Qualifications,,120,90,50,24,,,,,
+Olympiques,Basketball 3x3,,matches de poule (2 matchs),Hommes,2024-07-31T21:00:00Z,2024-07-31T23:00:00Z,Concorde,BK312,48.865589,2.3212049999999995,Paris (75),25000,Qualifications,,120,90,50,24,,,,,
+Olympiques,Basketball 3x3,,matches de poule (4 matchs),Femmes,2024-07-31T17:30:00Z,2024-07-31T19:30:00Z,Concorde,BK313,48.865589,2.3212049999999995,Paris (75),25000,Qualifications,,120,90,50,24,,,,,
+Olympiques,Basketball 3x3,,play in (2 matchs),Femmes,2024-07-31T21:30:00Z,2024-07-31T22:30:00Z,Concorde,BK314,48.865589,2.3212049999999995,Paris (75),25000,Qualifications,,130,95,65,40,,,,,
+Olympiques,Basketball 3x3,,matches de poule (4 matches),Hommes,2024-07-31T17:30:00Z,2024-07-31T19:30:00Z,Concorde,BK315,48.865589,2.3212049999999995,Paris (75),25000,Qualifications,,120,90,50,24,,,,,
+Olympiques,Basketball 3x3,,play in (2 matchs),Hommes,2024-07-31T21:30:00Z,2024-07-31T22:30:00Z,Concorde,BK316,48.865589,2.3212049999999995,Paris (75),25000,Qualifications,,130,95,65,40,,,,,
+Olympiques,Basketball 3x3,,demi-finales,Mixte,2024-07-31T17:30:00Z,2024-07-31T19:30:00Z,Concorde,BK317,48.865589,2.3212049999999995,Paris (75),25000,Qualifications,,160,120,80,50,,,,,
+Olympiques,Basketball 3x3,,match pour la médaille de bronze,Femmes,2024-07-31T21:00:00Z,2024-07-31T23:20:00Z,Concorde,BK318,48.865589,2.3212049999999995,Paris (75),25000,Médailles,,190,145,95,50,,,,,
+Olympiques,Basketball 3x3,,match pour la médaille de bronze,Hommes,2024-07-31T21:00:00Z,2024-07-31T23:20:00Z,Concorde,BK318,48.865589,2.3212049999999995,Paris (75),25000,Médailles,,190,145,95,50,,,,,
+Olympiques,Basketball 3x3,,match pour la médaille d'or,Femmes,2024-07-31T21:00:00Z,2024-07-31T23:20:00Z,Concorde,BK318,48.865589,2.3212049999999995,Paris (75),25000,Médailles,,190,145,95,50,,,,,
+Olympiques,Basketball 3x3,,match pour la médaille d'or,Hommes,2024-07-31T21:00:00Z,2024-07-31T23:20:00Z,Concorde,BK318,48.865589,2.3212049999999995,Paris (75),25000,Médailles,,190,145,95,50,,,,,
 Olympiques,Beach Volleyball,Tour préliminaire,(2 matchs),Mixte,2024-07-27T14:00:00Z,2024-07-27T16:00:00Z,Stade tour Eiffel,VBV01,48.857231999999996,2.296084,Paris (75),12860,Qualifications,,120,80,50,24,,,,,
 Olympiques,Beach Volleyball,Tour préliminaire,(2 matchs),Mixte,2024-07-27T18:00:00Z,2024-07-27T20:00:00Z,Stade tour Eiffel,VBV02,48.857231999999996,2.296084,Paris (75),12860,Qualifications,,120,80,50,24,,,,,
 Olympiques,Beach Volleyball,Tour préliminaire,(2 matchs),Mixte,2024-07-27T22:00:00Z,2024-07-27T00:00:00Z,Stade tour Eiffel,VBV03,48.857231999999996,2.296084,Paris (75),12860,Qualifications,,200,145,95,50,,,,,
@@ -414,10 +413,10 @@ Olympiques,Beach Volleyball,Match pour la médaille de bronze,,Femmes,2024-08-09
 Olympiques,Beach Volleyball,Match pour la médaille d'or,,Femmes,2024-08-09T21:00:00Z,2024-08-09T00:00:00Z,Stade tour Eiffel,VBV39,48.857231999999996,2.296084,Paris (75),12860,Médailles,,420,305,205,100,,,,,
 Olympiques,Beach Volleyball,Match pour la médaille de bronze,,Hommes,2024-08-10T21:00:00Z,2024-08-10T00:00:00Z,Stade tour Eiffel,VBV40,48.857231999999996,2.296084,Paris (75),12860,Médailles,,420,305,205,100,,,,,
 Olympiques,Beach Volleyball,Match pour la médaille d'or,,Hommes,2024-08-10T21:00:00Z,2024-08-10T00:00:00Z,Stade tour Eiffel,VBV40,48.857231999999996,2.296084,Paris (75),12860,Médailles,,420,305,205,100,,,,,
-Olympiques,BMX Freestyle,Park,manche qualificative,Femmes,2024-07-30T13:25:00Z,2024-07-30T16:30:00Z,Concorde,BMF01,48.865589,2.3212049999999995,Paris (75),37000,Qualifications,,120,90,50,24,,,,,
-Olympiques,BMX Freestyle,Park,manche qualificative,Hommes,2024-07-30T13:25:00Z,2024-07-30T16:30:00Z,Concorde,BMF01,48.865589,2.3212049999999995,Paris (75),37000,Qualifications,,120,90,50,24,,,,,
-Olympiques,BMX Freestyle,Park,finale,Femmes,2024-07-31T13:10:00Z,2024-07-31T16:30:00Z,Concorde,BMF02,48.865589,2.3212049999999995,Paris (75),37000,Médailles,,160,120,80,50,,,,,
-Olympiques,BMX Freestyle,Park,finale,Hommes,2024-07-31T13:10:00Z,2024-07-31T16:30:00Z,Concorde,BMF02,48.865589,2.3212049999999995,Paris (75),37000,Médailles,,160,120,80,50,,,,,
+Olympiques,BMX Freestyle,Park,manche qualificative,Femmes,2024-07-30T13:25:00Z,2024-07-30T16:30:00Z,Concorde,BMF01,48.865589,2.3212049999999995,Paris (75),25000,Qualifications,,120,90,50,24,,,,,
+Olympiques,BMX Freestyle,Park,manche qualificative,Hommes,2024-07-30T13:25:00Z,2024-07-30T16:30:00Z,Concorde,BMF01,48.865589,2.3212049999999995,Paris (75),25000,Qualifications,,120,90,50,24,,,,,
+Olympiques,BMX Freestyle,Park,finale,Femmes,2024-07-31T13:10:00Z,2024-07-31T16:30:00Z,Concorde,BMF02,48.865589,2.3212049999999995,Paris (75),25000,Médailles,,160,120,80,50,,,,,
+Olympiques,BMX Freestyle,Park,finale,Hommes,2024-07-31T13:10:00Z,2024-07-31T16:30:00Z,Concorde,BMF02,48.865589,2.3212049999999995,Paris (75),25000,Médailles,,160,120,80,50,,,,,
 Olympiques,BMX Racing,,quarts de finale,Hommes,2024-08-01T20:00:00Z,2024-08-01T22:20:00Z,Stade BMX,BMX01,48.787260999999994,2.034736,Saint-Quentin-en-Yvelines (78),3000,Qualifications,,120,90,50,24,,,,,
 Olympiques,BMX Racing,,quarts de finale,Femmes,2024-08-01T20:00:00Z,2024-08-01T22:20:00Z,Stade BMX,BMX01,48.787260999999994,2.034736,Saint-Quentin-en-Yvelines (78),3000,Qualifications,,120,90,50,24,,,,,
 Olympiques,BMX Racing,,Last Chance,Hommes,2024-08-01T20:00:00Z,2024-08-01T22:20:00Z,Stade BMX,BMX01,48.787260999999994,2.034736,Saint-Quentin-en-Yvelines (78),3000,Qualifications,,120,90,50,24,,,,,
@@ -463,7 +462,6 @@ Olympiques,Boxe,66kg,1/32 finale combat 3,Femmes,2024-07-28T11:00:00Z,2024-07-28
 Olympiques,Boxe,57kg,1/32 finale combat 2,Hommes,2024-07-28T15:30:00Z,2024-07-28T17:40:00Z,Arena Paris Nord,BOX04,48.97109984208225,2.52075889419615,Villepinte (93),6000,Qualifications,,150,100,50,24,,,,,
 Olympiques,Boxe,71kg,"1/32 finale, combat 3",Hommes,2024-07-28T15:30:00Z,2024-07-28T17:40:00Z,Arena Paris Nord,BOX04,48.97109984208225,2.52075889419615,Villepinte (93),6000,Qualifications,,150,100,50,24,,,,,
 Olympiques,Boxe,92kg,"1/16 finale, combat 3",Hommes,2024-07-28T15:30:00Z,2024-07-28T17:40:00Z,Arena Paris Nord,BOX04,48.97109984208225,2.52075889419615,Villepinte (93),6000,Qualifications,,150,100,50,24,,,,,
-Olympiques,Boxe,92kg,"1/16 finale, combat 4",Hommes,2024-07-28T15:30:00Z,2024-07-28T17:40:00Z,Arena Paris Nord,BOX04,48.97109984208225,2.52075889419615,Villepinte (93),6000,Qualifications,,150,100,50,24,,,,,
 Olympiques,Boxe,92kg,"1/16 finale, combat 4",Hommes,2024-07-28T15:30:00Z,2024-07-28T17:40:00Z,Arena Paris Nord,BOX04,48.97109984208225,2.52075889419615,Villepinte (93),6000,Qualifications,,150,100,50,24,,,,,
 Olympiques,Boxe,50kg,1/32 finale combat 3,Femmes,2024-07-28T15:30:00Z,2024-07-28T17:40:00Z,Arena Paris Nord,BOX04,48.97109984208225,2.52075889419615,Villepinte (93),6000,Qualifications,,150,100,50,24,,,,,
 Olympiques,Boxe,50kg,1/32 finale combat 4,Femmes,2024-07-28T15:30:00Z,2024-07-28T17:40:00Z,Arena Paris Nord,BOX04,48.97109984208225,2.52075889419615,Villepinte (93),6000,Qualifications,,150,100,50,24,,,,,
@@ -672,10 +670,10 @@ Olympiques,Boxe,57kg,cérémonie,Hommes,2024-08-10T21:30:00Z,2024-08-10T23:30:00
 Olympiques,Boxe,+92kg,finale combat 15,Hommes,2024-08-10T21:30:00Z,2024-08-10T23:30:00Z,Stade Roland-Garros,BOX28,48.847319999999996,2.2455010000000004,Paris (75),14962,Médailles,520,420,305,205,100,,,,,
 Olympiques,Boxe,75kg,cérémonie,Femmes,2024-08-10T21:30:00Z,2024-08-10T23:30:00Z,Stade Roland-Garros,BOX28,48.847319999999996,2.2455010000000004,Paris (75),14962,Médailles,520,420,305,205,100,,,,,
 Olympiques,Boxe,+92kg,cérémonie,Femmes,2024-08-10T21:30:00Z,2024-08-10T23:30:00Z,Stade Roland-Garros,BOX28,48.847319999999996,2.2455010000000004,Paris (75),14962,Médailles,520,420,305,205,100,,,,,
-Olympiques,Breaking,,qualifications,Femmes,2024-08-09T16:00:00Z,2024-08-09T18:00:00Z,Concorde,BKG01,48.865589,2.3212049999999995,Paris (75),37000,Qualifications,,120,90,50,24,,,,,
-Olympiques,Breaking,,finale,Femmes,2024-08-09T20:00:00Z,2024-08-09T22:00:00Z,Concorde,BKG02,48.865589,2.3212049999999995,Paris (75),37000,Médailles,,160,120,80,50,,,,,
-Olympiques,Breaking,,qualifications,Hommes,2024-08-10T16:00:00Z,2024-08-10T18:00:00Z,Concorde,BKG03,48.865589,2.3212049999999995,Paris (75),37000,Qualifications,,120,90,50,24,,,,,
-Olympiques,Breaking,,finale,Hommes,2024-08-10T20:00:00Z,2024-08-10T22:00:00Z,Concorde,BKG04,48.865589,2.3212049999999995,Paris (75),37000,Médailles,,160,120,80,50,,,,,
+Olympiques,Breaking,,qualifications,Femmes,2024-08-09T16:00:00Z,2024-08-09T18:00:00Z,Concorde,BKG01,48.865589,2.3212049999999995,Paris (75),25000,Qualifications,,120,90,50,24,,,,,
+Olympiques,Breaking,,finale,Femmes,2024-08-09T20:00:00Z,2024-08-09T22:00:00Z,Concorde,BKG02,48.865589,2.3212049999999995,Paris (75),25000,Médailles,,160,120,80,50,,,,,
+Olympiques,Breaking,,qualifications,Hommes,2024-08-10T16:00:00Z,2024-08-10T18:00:00Z,Concorde,BKG03,48.865589,2.3212049999999995,Paris (75),25000,Qualifications,,120,90,50,24,,,,,
+Olympiques,Breaking,,finale,Hommes,2024-08-10T20:00:00Z,2024-08-10T22:00:00Z,Concorde,BKG04,48.865589,2.3212049999999995,Paris (75),25000,Médailles,,160,120,80,50,,,,,
 Olympiques,Canoë slalom,Canoë    éliminatoires,manches 1 et 2,Hommes,2024-07-27T15:00:00Z,2024-07-27T19:10:00Z,Stade nautique-Bassin eau vive,CSL01,48.862229,2.636374,Vaires-sur-Marne (77),12000,Qualifications,,90,65,40,24,,,,,
 Olympiques,Canoë slalom,Kayak    éliminatoires,manches 1 et 2,Femmes,2024-07-27T15:00:00Z,2024-07-27T19:10:00Z,Stade nautique-Bassin eau vive,CSL01,48.862229,2.636374,Vaires-sur-Marne (77),12000,Qualifications,,90,65,40,24,,,,,
 Olympiques,Canoë slalom,Kayak,demi-finale,Femmes,2024-07-28T15:30:00Z,2024-07-28T18:50:00Z,Stade nautique-Bassin eau vive,CSL02,48.862229,2.636374,Vaires-sur-Marne (77),12000,Médailles,,220,165,115,75,,,,,
@@ -1422,14 +1420,14 @@ Olympiques,Rugby,,placement 7-8,Femmes,2024-07-30T14:30:00Z,2024-07-30T20:45:00Z
 Olympiques,Rugby,,placement 5-6,Femmes,2024-07-30T14:30:00Z,2024-07-30T20:45:00Z,Stade de France,RU708,48.924388,2.3598709999999996,Saint-Denis (93),77083,Médailles,170,150,115,80,50,,,,,
 Olympiques,Rugby,,médaille de bronze,Femmes,2024-07-30T14:30:00Z,2024-07-30T20:45:00Z,Stade de France,RU708,48.924388,2.3598709999999996,Saint-Denis (93),77083,Médailles,170,150,115,80,50,,,,,
 Olympiques,Rugby,,médaille d'or,Femmes,2024-07-30T14:30:00Z,2024-07-30T20:45:00Z,Stade de France,RU708,48.924388,2.3598709999999996,Saint-Denis (93),77083,Médailles,170,150,115,80,50,,,,,
-Olympiques,Skateboard,Street,préliminaires,Hommes,2024-07-27T12:00:00Z,2024-07-27T15:30:00Z,Concorde,SKB01,48.865589,2.3212049999999995,Paris (75),37000,Qualifications,,120,90,50,24,,,,,
-Olympiques,Skateboard,Street,finale,Hommes,2024-07-27T17:00:00Z,2024-07-27T19:00:00Z,Concorde,SKB02,48.865589,2.3212049999999995,Paris (75),37000,Médailles,,160,120,80,50,,,,,
-Olympiques,Skateboard,Street,préliminaires,Femmes,2024-07-28T12:00:00Z,2024-07-28T15:30:00Z,Concorde,SKB03,48.865589,2.3212049999999995,Paris (75),37000,Qualifications,,120,90,50,24,,,,,
-Olympiques,Skateboard,Street,finale,Femmes,2024-07-28T17:00:00Z,2024-07-28T19:00:00Z,Concorde,SKB04,48.865589,2.3212049999999995,Paris (75),37000,Médailles,,160,120,80,50,,,,,
-Olympiques,Skateboard,Park,préliminaires,Femmes,2024-08-06T12:30:00Z,2024-08-06T16:00:00Z,Concorde,SKB05,48.865589,2.3212049999999995,Paris (75),37000,Qualifications,,120,90,50,24,,,,,
-Olympiques,Skateboard,Park,finale,Femmes,2024-08-06T17:30:00Z,2024-08-06T19:00:00Z,Concorde,SKB06,48.865589,2.3212049999999995,Paris (75),37000,Médailles,,160,120,80,50,,,,,
-Olympiques,Skateboard,Park,préliminaires,Hommes,2024-08-07T12:30:00Z,2024-08-07T16:00:00Z,Concorde,SKB07,48.865589,2.3212049999999995,Paris (75),37000,Qualifications,,120,90,50,24,,,,,
-Olympiques,Skateboard,Park,finale,Hommes,2024-08-07T17:30:00Z,2024-08-07T19:00:00Z,Concorde,SKB08,48.865589,2.3212049999999995,Paris (75),37000,Médailles,,160,120,80,50,,,,,
+Olympiques,Skateboard,Street,préliminaires,Hommes,2024-07-27T12:00:00Z,2024-07-27T15:30:00Z,Concorde,SKB01,48.865589,2.3212049999999995,Paris (75),25000,Qualifications,,120,90,50,24,,,,,
+Olympiques,Skateboard,Street,finale,Hommes,2024-07-27T17:00:00Z,2024-07-27T19:00:00Z,Concorde,SKB02,48.865589,2.3212049999999995,Paris (75),25000,Médailles,,160,120,80,50,,,,,
+Olympiques,Skateboard,Street,préliminaires,Femmes,2024-07-28T12:00:00Z,2024-07-28T15:30:00Z,Concorde,SKB03,48.865589,2.3212049999999995,Paris (75),25000,Qualifications,,120,90,50,24,,,,,
+Olympiques,Skateboard,Street,finale,Femmes,2024-07-28T17:00:00Z,2024-07-28T19:00:00Z,Concorde,SKB04,48.865589,2.3212049999999995,Paris (75),25000,Médailles,,160,120,80,50,,,,,
+Olympiques,Skateboard,Park,préliminaires,Femmes,2024-08-06T12:30:00Z,2024-08-06T16:00:00Z,Concorde,SKB05,48.865589,2.3212049999999995,Paris (75),25000,Qualifications,,120,90,50,24,,,,,
+Olympiques,Skateboard,Park,finale,Femmes,2024-08-06T17:30:00Z,2024-08-06T19:00:00Z,Concorde,SKB06,48.865589,2.3212049999999995,Paris (75),25000,Médailles,,160,120,80,50,,,,,
+Olympiques,Skateboard,Park,préliminaires,Hommes,2024-08-07T12:30:00Z,2024-08-07T16:00:00Z,Concorde,SKB07,48.865589,2.3212049999999995,Paris (75),25000,Qualifications,,120,90,50,24,,,,,
+Olympiques,Skateboard,Park,finale,Hommes,2024-08-07T17:30:00Z,2024-08-07T19:00:00Z,Concorde,SKB08,48.865589,2.3212049999999995,Paris (75),25000,Médailles,,160,120,80,50,,,,,
 Olympiques,Sports équestres,Concours complet,dressage,Mixte,2024-07-27T09:30:00Z,2024-07-27T18:30:00Z,Château de Versailles,EQU01,48.815115000000006,2.08208,Versailles (78),15000,Qualifications,,,,,,,,,,
 Olympiques,Sports équestres,Concours complet,cross-country,Mixte,2024-07-28T10:30:00Z,2024-07-28T15:00:00Z,Château de Versailles,EQU02,48.815115000000006,2.08208,Versailles (78),15000,Qualifications,,,,,,,,,,
 Olympiques,Sports équestres,Concours complet,saut d'obstacles Finale individuel et par équipe,Mixte,2024-07-29T11:00:00Z,2024-07-29T16:30:00Z,Château de Versailles,EQU03,48.815115000000006,2.08208,Versailles (78),15000,Médailles,,,,,,,,,,
@@ -1871,28 +1869,18 @@ Olympiques,Water-polo,,match de classement,Hommes,2024-08-11T09:00:00Z,2024-08-1
 Olympiques,Water-polo,,match pour la médaille de bronze,Hommes,2024-08-11T09:00:00Z,2024-08-11T12:00:00Z,Paris La Défense Arena,WPO35,48.89566,2.2297100000000003,Nanterre (92),17000,Médailles,160,150,115,80,50,,,,,
 Olympiques,Water-polo,,match pour la médaille d'or,Hommes,2024-08-11T14:00:00Z,2024-08-11T15:50:00Z,Paris La Défense Arena,WPO36,48.89566,2.2297100000000003,Nanterre (92),17000,Médailles,200,190,145,95,50,,,,,
 Paralympiques,Basket Fauteuil,,tour préliminaire,Mixte,2024-08-29T10:30:00Z,2024-08-29T14:30:00Z,Arena Bercy,PWBK01,48.838649,2.3784959999999997,Paris (75),15000,Qualifications,55,40,25,15,,,,55,25,15
-Paralympiques,Basket Fauteuil,,tour préliminaire,Mixte,2024-08-29T10:30:00Z,2024-08-29T14:30:00Z,Arena Bercy,PWBK01,48.838649,2.3784959999999997,Paris (75),15000,Qualifications,55,40,25,15,,,,55,25,15
-Paralympiques,Basket Fauteuil,,tour préliminaire,Mixte,2024-08-29T16:00:00Z,2024-08-29T20:00:00Z,Arena Bercy,PWBK02,48.838649,2.3784959999999997,Paris (75),15000,Qualifications,55,40,25,15,,,,55,25,15
 Paralympiques,Basket Fauteuil,,tour préliminaire,Mixte,2024-08-29T16:00:00Z,2024-08-29T20:00:00Z,Arena Bercy,PWBK02,48.838649,2.3784959999999997,Paris (75),15000,Qualifications,55,40,25,15,,,,55,25,15
 Paralympiques,Basket Fauteuil,,tour préliminaire,Mixte,2024-08-29T21:30:00Z,2024-08-29T23:15:00Z,Arena Bercy,PWBK03,48.838649,2.3784959999999997,Paris (75),15000,Qualifications,55,40,25,15,,,,55,25,15
 Paralympiques,Basket Fauteuil,,tour préliminaire,Mixte,2024-08-30T10:30:00Z,2024-08-30T14:30:00Z,Arena Bercy,PWBK04,48.838649,2.3784959999999997,Paris (75),15000,Qualifications,55,40,25,15,,,,55,25,15
-Paralympiques,Basket Fauteuil,,tour préliminaire,Mixte,2024-08-30T10:30:00Z,2024-08-30T14:30:00Z,Arena Bercy,PWBK04,48.838649,2.3784959999999997,Paris (75),15000,Qualifications,55,40,25,15,,,,55,25,15
-Paralympiques,Basket Fauteuil,,tour préliminaire,Mixte,2024-08-30T16:00:00Z,2024-08-30T20:00:00Z,Arena Bercy,PWBK05,48.838649,2.3784959999999997,Paris (75),15000,Qualifications,55,40,25,15,,,,55,25,15
 Paralympiques,Basket Fauteuil,,tour préliminaire,Mixte,2024-08-30T16:00:00Z,2024-08-30T20:00:00Z,Arena Bercy,PWBK05,48.838649,2.3784959999999997,Paris (75),15000,Qualifications,55,40,25,15,,,,55,25,15
 Paralympiques,Basket Fauteuil,,tour préliminaire,Mixte,2024-08-30T21:30:00Z,2024-08-30T23:15:00Z,Arena Bercy,PWBK06,48.838649,2.3784959999999997,Paris (75),15000,Qualifications,55,40,25,15,,,,55,25,15
 Paralympiques,Basket Fauteuil,,tour préliminaire,Mixte,2024-08-31T10:30:00Z,2024-08-31T14:30:00Z,Arena Bercy,PWBK07,48.838649,2.3784959999999997,Paris (75),15000,Qualifications,55,40,25,15,,,,55,25,15
-Paralympiques,Basket Fauteuil,,tour préliminaire,Mixte,2024-08-31T10:30:00Z,2024-08-31T14:30:00Z,Arena Bercy,PWBK07,48.838649,2.3784959999999997,Paris (75),15000,Qualifications,55,40,25,15,,,,55,25,15
-Paralympiques,Basket Fauteuil,,tour préliminaire,Mixte,2024-08-31T16:00:00Z,2024-08-31T20:00:00Z,Arena Bercy,PWBK08,48.838649,2.3784959999999997,Paris (75),15000,Qualifications,55,40,25,15,,,,55,25,15
 Paralympiques,Basket Fauteuil,,tour préliminaire,Mixte,2024-08-31T16:00:00Z,2024-08-31T20:00:00Z,Arena Bercy,PWBK08,48.838649,2.3784959999999997,Paris (75),15000,Qualifications,55,40,25,15,,,,55,25,15
 Paralympiques,Basket Fauteuil,,tour préliminaire,Mixte,2024-08-31T21:30:00Z,2024-08-31T23:15:00Z,Arena Bercy,PWBK09,48.838649,2.3784959999999997,Paris (75),15000,Qualifications,55,40,25,15,,,,55,25,15
 Paralympiques,Basket Fauteuil,,tour préliminaire,Mixte,2024-09-01T10:30:00Z,2024-09-01T14:30:00Z,Arena Bercy,PWBK10,48.838649,2.3784959999999997,Paris (75),15000,Qualifications,55,40,25,15,,,,55,25,15
-Paralympiques,Basket Fauteuil,,tour préliminaire,Mixte,2024-09-01T10:30:00Z,2024-09-01T14:30:00Z,Arena Bercy,PWBK10,48.838649,2.3784959999999997,Paris (75),15000,Qualifications,55,40,25,15,,,,55,25,15
-Paralympiques,Basket Fauteuil,,tour préliminaire,Mixte,2024-09-01T16:00:00Z,2024-09-01T20:00:00Z,Arena Bercy,PWBK11,48.838649,2.3784959999999997,Paris (75),15000,Qualifications,55,40,25,15,,,,55,25,15
 Paralympiques,Basket Fauteuil,,tour préliminaire,Mixte,2024-09-01T16:00:00Z,2024-09-01T20:00:00Z,Arena Bercy,PWBK11,48.838649,2.3784959999999997,Paris (75),15000,Qualifications,55,40,25,15,,,,55,25,15
 Paralympiques,Basket Fauteuil,,tour préliminaire,Mixte,2024-09-01T21:30:00Z,2024-09-01T23:15:00Z,Arena Bercy,PWBK12,48.838649,2.3784959999999997,Paris (75),15000,Qualifications,55,40,25,15,,,,55,25,15
 Paralympiques,Basket Fauteuil,,tour préliminaire,Mixte,2024-09-02T13:45:00Z,2024-09-02T17:45:00Z,Arena Bercy,PWBK13,48.838649,2.3784959999999997,Paris (75),15000,Qualifications,55,40,25,15,,,,55,25,15
-Paralympiques,Basket Fauteuil,,tour préliminaire,Mixte,2024-09-02T13:45:00Z,2024-09-02T17:45:00Z,Arena Bercy,PWBK13,48.838649,2.3784959999999997,Paris (75),15000,Qualifications,55,40,25,15,,,,55,25,15
-Paralympiques,Basket Fauteuil,,tour préliminaire,Mixte,2024-09-02T19:15:00Z,2024-09-02T23:15:00Z,Arena Bercy,PWBK14,48.838649,2.3784959999999997,Paris (75),15000,Qualifications,55,40,25,15,,,,55,25,15
 Paralympiques,Basket Fauteuil,,tour préliminaire,Mixte,2024-09-02T19:15:00Z,2024-09-02T23:15:00Z,Arena Bercy,PWBK14,48.838649,2.3784959999999997,Paris (75),15000,Qualifications,55,40,25,15,,,,55,25,15
 Paralympiques,Basket Fauteuil,,quart de finales (2 matchs),Hommes,2024-09-03T13:45:00Z,2024-09-03T17:45:00Z,Arena Bercy,PWBK15,48.838649,2.3784959999999997,Paris (75),15000,Qualifications,55,40,25,15,,,,55,25,15
 Paralympiques,Basket Fauteuil,,quart de finales (2 matchs),Hommes,2024-09-03T19:15:00Z,2024-09-03T23:15:00Z,Arena Bercy,PWBK16,48.838649,2.3784959999999997,Paris (75),15000,Qualifications,55,40,25,15,,,,55,25,15
@@ -1900,7 +1888,6 @@ Paralympiques,Basket Fauteuil,Men's or Women's Playoff 58,,Mixte,2024-09-04T10:3
 Paralympiques,Basket Fauteuil,,quart de finales,Femmes,2024-09-04T10:30:00Z,2024-09-04T14:30:00Z,Arena Bercy,PWBK17,48.838649,2.3784959999999997,Paris (75),15000,Qualifications,55,40,25,15,,,,55,25,15
 Paralympiques,Basket Fauteuil,,quarts de finales (2 matchs),Femmes,2024-09-04T16:00:00Z,2024-09-04T20:00:00Z,Arena Bercy,PWBK18,48.838649,2.3784959999999997,Paris (75),15000,Qualifications,55,40,25,15,,,,55,25,15
 Paralympiques,Basket Fauteuil,,quart de finales,Femmes,2024-09-04T21:30:00Z,2024-09-04T23:15:00Z,Arena Bercy,PWBK19,48.838649,2.3784959999999997,Paris (75),15000,Qualifications,55,40,25,15,,,,55,25,15
-Paralympiques,Basket Fauteuil,,Playoff 5-8,Mixte,2024-09-05T10:30:00Z,2024-09-05T14:30:00Z,Arena Bercy,PWBK20,48.838649,2.3784959999999997,Paris (75),15000,Qualifications,55,40,25,15,,,,55,25,15
 Paralympiques,Basket Fauteuil,,Playoff 5-8,Mixte,2024-09-05T10:30:00Z,2024-09-05T14:30:00Z,Arena Bercy,PWBK20,48.838649,2.3784959999999997,Paris (75),15000,Qualifications,55,40,25,15,,,,55,25,15
 Paralympiques,Basket Fauteuil,,Demi-finale,Hommes,2024-09-05T16:00:00Z,2024-09-05T20:00:00Z,Arena Bercy,PWBK21,48.838649,2.3784959999999997,Paris (75),15000,Qualifications,65,50,35,20,,,,65,35,20
 Paralympiques,Basket Fauteuil,,Playoff 5-8,Mixte,2024-09-05T16:00:00Z,2024-09-05T20:00:00Z,Arena Bercy,PWBK21,48.838649,2.3784959999999997,Paris (75),15000,Qualifications,65,50,35,20,,,,65,35,20
@@ -1919,9 +1906,6 @@ Paralympiques,Boccia,Individuel,BC2 (8 matchs),Hommes,2024-08-29T10:30:00Z,2024-
 Paralympiques,Boccia,Individuel,BC2 (8 matchs),Femmes,2024-08-29T10:30:00Z,2024-08-29T15:15:00Z,Arena Paris Sud 1,PBOC01,48.8301568270296,2.2904798629886454,Paris (75),9000,Qualifications,,20,15,,,,,,15,
 Paralympiques,Boccia,Individuel,BC1 (8 matchs),Hommes,2024-08-29T10:30:00Z,2024-08-29T15:15:00Z,Arena Paris Sud 1,PBOC01,48.8301568270296,2.2904798629886454,Paris (75),9000,Qualifications,,20,15,,,,,,15,
 Paralympiques,Boccia,Individuel,BC3 (8 matchs),Hommes,2024-08-29T10:30:00Z,2024-08-29T15:15:00Z,Arena Paris Sud 1,PBOC01,48.8301568270296,2.2904798629886454,Paris (75),9000,Qualifications,,20,15,,,,,,15,
-Paralympiques,Boccia,Individuel,BC4 (4 matchs),Hommes,2024-08-29T17:00:00Z,2024-08-29T22:55:00Z,Arena Paris Sud 1,PBOC02,48.8301568270296,2.2904798629886454,Paris (75),9000,Qualifications,,20,15,,,,,,15,
-Paralympiques,Boccia,Individuel,BC1 (4 matchs),Femmes,2024-08-29T17:00:00Z,2024-08-29T22:55:00Z,Arena Paris Sud 1,PBOC02,48.8301568270296,2.2904798629886454,Paris (75),9000,Qualifications,,20,15,,,,,,15,
-Paralympiques,Boccia,Individuel,BC4 (4 matchs),Femmes,2024-08-29T17:00:00Z,2024-08-29T22:55:00Z,Arena Paris Sud 1,PBOC02,48.8301568270296,2.2904798629886454,Paris (75),9000,Qualifications,,20,15,,,,,,15,
 Paralympiques,Boccia,Individuel,BC4 (4 matchs),Hommes,2024-08-29T17:00:00Z,2024-08-29T22:55:00Z,Arena Paris Sud 1,PBOC02,48.8301568270296,2.2904798629886454,Paris (75),9000,Qualifications,,20,15,,,,,,15,
 Paralympiques,Boccia,Individuel,BC1 (4 matchs),Femmes,2024-08-29T17:00:00Z,2024-08-29T22:55:00Z,Arena Paris Sud 1,PBOC02,48.8301568270296,2.2904798629886454,Paris (75),9000,Qualifications,,20,15,,,,,,15,
 Paralympiques,Boccia,Individuel,BC4 (4 matchs),Femmes,2024-08-29T17:00:00Z,2024-08-29T22:55:00Z,Arena Paris Sud 1,PBOC02,48.8301568270296,2.2904798629886454,Paris (75),9000,Qualifications,,20,15,,,,,,15,
@@ -1976,17 +1960,13 @@ Paralympiques,Boccia,Individuel   BC3,Match pour la médaille d'or,Hommes,2024-0
 Paralympiques,Boccia,Double mixte,BC4 (4 matchs),Mixte,2024-09-03T10:30:00Z,2024-09-03T14:40:00Z,Arena Paris Sud 1,PBOC11,48.8301568270296,2.2904798629886454,Paris (75),9000,Qualifications,,20,15,,,,,,15,
 Paralympiques,Boccia,Double mixte,BC3 (4 matchs),Mixte,2024-09-03T10:30:00Z,2024-09-03T14:40:00Z,Arena Paris Sud 1,PBOC11,48.8301568270296,2.2904798629886454,Paris (75),9000,Qualifications,,20,15,,,,,,15,
 Paralympiques,Boccia,Equipe mixte,BC1/BC2 (4 matchs),Mixte,2024-09-03T10:30:00Z,2024-09-03T14:40:00Z,Arena Paris Sud 1,PBOC11,48.8301568270296,2.2904798629886454,Paris (75),9000,Qualifications,,20,15,,,,,,15,
-Paralympiques,Boccia,Double mixte,BC4 (4 matchs),Mixte,2024-09-03T10:30:00Z,2024-09-03T14:40:00Z,Arena Paris Sud 1,PBOC11,48.8301568270296,2.2904798629886454,Paris (75),9000,Qualifications,,20,15,,,,,,15,
 Paralympiques,Boccia,Equipe mixte,BC1/BC2 (4 matchs),Mixte,2024-09-03T17:00:00Z,2024-09-03T21:40:00Z,Arena Paris Sud,PBOC12,48.8301568270296,2.2904798629886454,Paris (75),12000,Qualifications,,,,,,,,,,
 Paralympiques,Boccia,Double mixte,BC3 (4 matchs),Mixte,2024-09-03T17:00:00Z,2024-09-03T21:40:00Z,Arena Paris Sud,PBOC12,48.8301568270296,2.2904798629886454,Paris (75),12000,Qualifications,,,,,,,,,,
 Paralympiques,Boccia,Double mixte,BC4 (4 matchs),Mixte,2024-09-03T17:00:00Z,2024-09-03T21:40:00Z,Arena Paris Sud,PBOC12,48.8301568270296,2.2904798629886454,Paris (75),12000,Qualifications,,,,,,,,,,
-Paralympiques,Boccia,Double mixte,BC3 (4 matchs),Mixte,2024-09-03T17:00:00Z,2024-09-03T21:40:00Z,Arena Paris Sud,PBOC12,48.8301568270296,2.2904798629886454,Paris (75),12000,Qualifications,,,,,,,,,,
-Paralympiques,Boccia,Equipe mixte,BC1/BC2 (4 matchs),Mixte,2024-09-03T17:00:00Z,2024-09-03T21:40:00Z,Arena Paris Sud,PBOC12,48.8301568270296,2.2904798629886454,Paris (75),12000,Qualifications,,,,,,,,,,
 Paralympiques,Boccia,Double mixte  BC4,Quarts de finale,Mixte,2024-09-04T10:30:00Z,2024-09-04T15:10:00Z,Arena Paris Sud 1,PBOC13,48.8301568270296,2.2904798629886454,Paris (75),9000,Qualifications,,20,15,,,,,,15,
 Paralympiques,Boccia,Equipe mixte  BC1/BC2,Quarts de finale,Mixte,2024-09-04T10:30:00Z,2024-09-04T15:10:00Z,Arena Paris Sud 1,PBOC13,48.8301568270296,2.2904798629886454,Paris (75),9000,Qualifications,,20,15,,,,,,15,
 Paralympiques,Boccia,Double mixte  BC3,Quarts de finale,Mixte,2024-09-04T10:30:00Z,2024-09-04T15:10:00Z,Arena Paris Sud 1,PBOC13,48.8301568270296,2.2904798629886454,Paris (75),9000,Qualifications,,20,15,,,,,,15,
 Paralympiques,Boccia,Equipe mixte  BC1/BC2,Demi-finales,Mixte,2024-09-04T17:00:00Z,2024-09-04T21:40:00Z,Arena Paris Sud 1,PBOC14,48.8301568270296,2.2904798629886454,Paris (75),9000,Qualifications,,20,15,,,,,,15,
-Paralympiques,Boccia,Double mixte  BC4,Demi-finales,Mixte,2024-09-04T17:00:00Z,2024-09-04T21:40:00Z,Arena Paris Sud 1,PBOC14,48.8301568270296,2.2904798629886454,Paris (75),9000,Qualifications,,20,15,,,,,,15,
 Paralympiques,Boccia,Double mixte  BC4,Demi-finales,Mixte,2024-09-04T17:00:00Z,2024-09-04T21:40:00Z,Arena Paris Sud 1,PBOC14,48.8301568270296,2.2904798629886454,Paris (75),9000,Qualifications,,20,15,,,,,,15,
 Paralympiques,Boccia,Equipe mixte  BC1/BC2,Match pour la médaille de bronze,Mixte,2024-09-05T10:30:00Z,2024-09-05T15:10:00Z,Arena Paris Sud 1,PBOC15,48.8301568270296,2.2904798629886454,Paris (75),9000,Qualifications,,20,15,,,,,,15,
 Paralympiques,Boccia,Double mixte  BC4,Match pour la médaille de bronze,Mixte,2024-09-05T10:30:00Z,2024-09-05T15:10:00Z,Arena Paris Sud 1,PBOC15,48.8301568270296,2.2904798629886454,Paris (75),9000,Qualifications,,20,15,,,,,,15,
@@ -3442,5 +3422,5 @@ Paralympiques,Volleyball assis,,Match pour la médaille de bronze,Hommes,2024-09
 Paralympiques,Volleyball assis,,Match pour la médaille d'or,Hommes,2024-09-06T19:30:00Z,2024-09-06T21:30:00Z,Arena Paris Nord,PVBS18,48.97109984208225,2.52075889419615,Villepinte (93),6000,Médailles,,25,20,,,,,,20,
 Paralympiques,Volleyball assis,,Match pour la médaille de bronze,Femmes,2024-09-07T15:00:00Z,2024-09-07T16:30:00Z,Arena Paris Nord,PVBS19,48.97109984208225,2.52075889419615,Villepinte (93),6000,Médailles,,20,15,,,,,,15,
 Paralympiques,Volleyball assis,,Match pour la médaille d'or        ,Femmes,2024-09-07T19:30:00Z,2024-09-07T21:30:00Z,Arena Paris Nord,PVBS20,48.97109984208225,2.52075889419615,Villepinte (93),6000,Médailles,,25,20,,,,,,20,
-Paralympiques,Cérémonie,Cérémonie d'ouverture,,Mixte,2024-08-24T20:00:00Z,2024-08-24T23:00:00Z,Concorde,POC01,48.86559,2.321205,Paris (75),37000,Cérémonie,,700,450,150,,,,,,
+Paralympiques,Cérémonie,Cérémonie d'ouverture,,Mixte,2024-08-24T20:00:00Z,2024-08-24T23:00:00Z,Concorde,POC01,48.86559,2.321205,Paris (75),25000,Cérémonie,,700,450,150,,,,,,
 Paralympiques,Cérémonie,Cérémonie de clôture,,Mixte,2024-09-08T20:00:00Z,2024-09-08T23:00:00Z,Stade de France,PCC01,48.92439,2.359871,Saint-Denis (93),77083,Cérémonie,450,400,250,120,45,,,,,
