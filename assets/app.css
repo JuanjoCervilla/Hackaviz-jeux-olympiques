@@ -18,7 +18,7 @@ body {
 
 .Select-control {
     background-color: #d9c47a !important;
-    color:white;
+    color:black;
   }
   
 .Select-menu-outer {
@@ -82,7 +82,7 @@ body {
 
 #analysis-card {
     background-color: #FFFFFF;
-    padding: 2rem;
+    padding: 2rem;  
 }
 
 #control-card {

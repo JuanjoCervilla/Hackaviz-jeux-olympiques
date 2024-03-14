@@ -12,7 +12,7 @@ import pandas as pd
 from datetime import datetime as dt
 
 df_jo = pd.read_csv('./data/paris_2024_traite.csv')
-df_restau = pd.read_csv('./data/restaurants_proximité.csv')
+df_restau = pd.read_csv('./data/restaurants_proximité_traite.csv')
 
 ## APLICATION AND SERVER
 from app import app
@@ -731,7 +731,7 @@ def update_first_piechart_graph(session, typeRestau, distance):
     type_counts_df = pd.DataFrame({'Type': type_counts.index, 'Count': type_counts.values})
 
     fig = px.pie(type_counts_df, values='Count', names='Type', hole=0.7)
-    fig.update_layout(showlegend=False)
+    #fig.update_layout(showlegend=False)
     return fig
 
 
