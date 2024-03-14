@@ -1,0 +1,15 @@
+#003561 -- azul marino
+#d9c47a --> ocre 
+#f1abc9 --> rosa
+
+
+/* CSS HEX */
+--shilo: #e8b4af;
+--curious-blue: #2d94cb;
+--cod-gray: #0c0c0c;
+--teal-blue: #043463;
+--astral: #3a73a2;
+--laser: #cbb974;
+--bay-of many: #235478;
+--xanadu: #697a6c;
+--trendy-pink: #947ca4;

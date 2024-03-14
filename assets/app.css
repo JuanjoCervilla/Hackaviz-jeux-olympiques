@@ -16,14 +16,39 @@ body {
     margin: 0px;
 }
 
-h4, h5 {
-    text-align: center;
+.Select-control {
+    background-color: #d9c47a !important;
+    color:white;
+  }
+  
+.Select-menu-outer {
+    background-color: #d9c47a;
+    color: #000;
+}
+
+.Select-value-label {
+    color: #000 !important;
+}
+
+#Dropdown_Session .Select-control {
+    background-color: #f1abc9 !important;
+    color:black;
+  }
+  
+#Dropdown_Session .Select-menu-outer {
+    background-color: #f1abc9;
+    color: black;
+}
+
+#Dropdown_Session .Select-value-label {
+    color: black !important;
 }
 
 .banner {
     height: 5.5rem;
     padding: 0rem 2rem 0rem;
-    background-color: white;
+    background-color: #003561;
+    color:#FFFFFF;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -43,6 +68,18 @@ h4, h5 {
     width: 100%;
 }
 
+
+#control-card h5, h4 {
+    text-align: center;
+    color: #FFFFFF;
+    /* background-color: rgb(236, 220, 162); */
+}
+
+#analysis-card h5, h4 {
+    text-align: center;
+    color: #003561;
+}
+
 #analysis-card {
     background-color: #FFFFFF;
     padding: 2rem;
@@ -50,6 +87,7 @@ h4, h5 {
 
 #control-card {
     padding: 2rem;
+    background-color: #003561;
 }
 
 #title-analysis-card{

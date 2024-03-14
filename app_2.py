@@ -31,11 +31,15 @@ header = dbc.Card([
     html.Div(
     id="banner",
     className="banner",
-    children=[html.Img(src=app.get_asset_url("paris_2024.png")),
-              html.H1("Jeux Olympiques Paris 2024"),
-              html.Img(src=app.get_asset_url("logo_jo.png"))],
-        ),
-])
+    children=[
+            dbc.Row([
+                dbc.Col([html.Img(src=app.get_asset_url("paris_2024.png"))], width = 1 ),
+                dbc.Col([' '], width = 1 ),
+                dbc.Col([html.H1("Jeux Olympiques Paris 2024")], width = 9 ),
+                dbc.Col([html.Img(src=app.get_asset_url("logo_jo.png"))], width = 1 ),
+            ])    
+        ]),
+], className="border-0 bg-transparent")
 
 generate_control_card = html.Div(
         id="control-card",
@@ -48,7 +52,7 @@ generate_control_card = html.Div(
                 options=[{'label': str(x), 'value': x} for x in df_jo.Jeux.unique()],
                 # inline=True,
                 labelStyle={'display': 'inline-block',
-                            'background' : '#66B2FF',
+                            'background' : '#d9c47a',
                             'padding': '0.4rem 1.1rem',
                             'border-radius':'0.3rem',
                             'margin' : '0.7rem',
@@ -64,7 +68,7 @@ generate_control_card = html.Div(
                         value='Hommes',
                         options= [{'label': 'Hommes', 'value': 'Hommes'}, {'label': 'Femmes', 'value': 'Femmes'},{'label': 'Mixte', 'value': 'Mixte'}],#[{'label': x, 'value': x} for x in df_jo.Genre.unique()],
                         labelStyle={'display': 'inline-block',
-                                    'background' : '#CCE5FF',
+                                    'background' : '#d9c47a',
                                     'padding': '0.3rem 0.5rem',
                                     'border-radius':'0.3rem',
                                     'margin' : '0.5rem',
@@ -116,14 +120,14 @@ generate_control_card = html.Div(
             dash_table.DataTable(id = 'listing_session_info',
                                     style_cell={'textAlign': 'center'},
                                     style_as_list_view=True, 
-                                    style_header={ 'backgroundColor': 'rgb(210, 210, 210)', 'color': 'black','fontWeight': 'bold'},
+                                    style_header={ 'backgroundColor': 'rgb(217, 196, 122)', 'color': 'black','fontWeight': 'bold'},
                                     style_cell_conditional=[{'if': {'column_id': 'Session'},'fontWeight': 'bold'}],
-                                    style_data_conditional=[ {'if': {'row_index': 'odd'},'backgroundColor': 'rgb(240, 240, 240)',}],
-                                    page_size=4
+                                    style_data_conditional=[ {'if': {'row_index': 'odd'},'backgroundColor': 'rgb(236, 220, 162)',}],
+                                    page_size=5
                                     ),
             html.Br(),
             html.Br(),
-            html.H4("Sélectionnez le code de la session pour l'analyse"),
+            html.H5("Sélectionnez le code de la session pour l'analyse"),
             html.Br(),
             html.Div(children = [
                 dcc.Dropdown(
@@ -172,9 +176,9 @@ analysis_card = html.Div(
                     dash_table.DataTable(id = 'listing_phase_info',
                                             style_cell={'textAlign': 'center'},
                                             style_as_list_view=True, 
-                                            style_header={ 'backgroundColor': 'rgb(210, 210, 210)', 'color': 'black','fontWeight': 'bold'},
+                                            style_header={ 'backgroundColor': 'rgb(217, 196, 122)', 'color': 'black','fontWeight': 'bold'},
                                             style_cell_conditional=[{'if': {'column_id': 'Session'},'fontWeight': 'bold'}],
-                                            style_data_conditional=[ {'if': {'row_index': 'odd'},'backgroundColor': 'rgb(240, 240, 240)',}],
+                                            style_data_conditional=[ {'if': {'row_index': 'odd'},'backgroundColor': 'rgb(236, 220, 162)',}],
                                             page_size=7,
                                             #fixed_rows={'headers': True},
                                             style_table={'overflowX': 'auto'}  
@@ -214,9 +218,9 @@ analysis_card = html.Div(
                     dash_table.DataTable(id = 'listing_restau',
                         style_cell={'textAlign': 'center'},
                         style_as_list_view=True, 
-                        style_header={ 'backgroundColor': 'rgb(210, 210, 210)', 'color': 'black','fontWeight': 'bold'},
-                        style_cell_conditional=[{'if': {'column_id': 'Etablissement'},'fontWeight': 'bold'}],
-                        style_data_conditional=[ {'if': {'row_index': 'odd'},'backgroundColor': 'rgb(240, 240, 240)',}],
+                        style_header={ 'backgroundColor': 'rgb(217, 196, 122)', 'color': 'black','fontWeight': 'bold'},
+                        style_cell_conditional=[{'if': {'column_id': 'Session'},'fontWeight': 'bold'}],
+                        style_data_conditional=[ {'if': {'row_index': 'odd'},'backgroundColor': 'rgb(236, 220, 162)',}],
                         page_action='none',
                         style_table={'height': '300px', 'overflowY': 'auto'}
                         ),
@@ -761,7 +765,7 @@ def update_first_piechart_graph(session, typeRestau, distance):
     concatenated_df['dataset'] = concatenated_df.index.get_level_values(0)
     
     fig = px.scatter_mapbox(concatenated_df, lat="latitude", lon="longitude", hover_name="Etablissement",color="dataset",
-                    color_discrete_map={"df1": "blue", "df2": "red"}, zoom=10, height=600, width=1500)
+                    color_discrete_map={"df1": "#2d94cb", "df2": "#003561"}, zoom=11, height=600, width=1500)
     #hover_data=["premiere_activité", "adresse"]
     fig.update_layout(mapbox_style="open-street-map", showlegend=False)
     
