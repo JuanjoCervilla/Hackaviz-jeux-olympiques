@@ -16,9 +16,9 @@ body {
     margin: 0px;
 }
 
-/* hr {
-    margin: 0.3rem 0rem;
-} */
+h4, h5 {
+    text-align: center;
+}
 
 .banner {
     height: 5.5rem;
@@ -75,12 +75,6 @@ body {
 
 }
 
-/* #phases-prices-card{    
-    display: flex;
-    flex-flow: row wrap;
-
-} */
-
 #phases-prices-card{    
     display: grid;
     grid-template-columns: 2fr 2fr; 
@@ -122,6 +116,28 @@ body {
 #Dropdown_Epreuve {
     width: 300px;
 }
+
+#Dropdown_Session{
+    width: 300px;
+}
+
+#RangeSlider_Distance{
+    width: 550px;
+}
+
+#Dropdown_TypeRestau{
+    width: 700px;
+}
+
+#RangeSlider_Div {
+    display: flex;
+    padding-left: 20px;
+    justify-content: center;
+}
+
+
+
+
 
 
 /*
