@@ -12,7 +12,7 @@ import pandas as pd
 from datetime import datetime as dt
 
 df_jo = pd.read_csv('./data/paris_2024_traite.csv')
-df_restau = pd.read_csv('./data/restaurants_proximité.csv')
+df_restau = pd.read_csv('./data/restaurants_proximité_traite.csv')
 
 ## APLICATION AND SERVER
 from app import app
@@ -31,90 +31,117 @@ header = dbc.Card([
     html.Div(
     id="banner",
     className="banner",
-    children=[html.Img(src=app.get_asset_url("paris_2024.png")),
-              html.H1("Jeux Olympiques Paris 2024"),
-              html.Img(src=app.get_asset_url("logo_jo.png"))],
-        ),
-])
+    children=[
+            dbc.Row([
+                dbc.Col([html.Img(src=app.get_asset_url("paris_2024.png"))], width = 1 ),
+                dbc.Col([' '], width = 1 ),
+                dbc.Col([html.H1("Jeux Olympiques Paris 2024")], width = 9 ),
+                dbc.Col([html.Img(src=app.get_asset_url("logo_jo.png"))], width = 1 ),
+            ])    
+        ]),
+], className="border-0 bg-transparent")
 
 generate_control_card = html.Div(
         id="control-card",
         children=[
-            html.P("Sélectionnez le type de jeux"),
-            dcc.RadioItems(
+            html.H5("Sélectionnez le type de jeux"),
+            html.Div(children = [
+                dcc.RadioItems(
                 id='RadioItems_Jeux',
                 value = list(df_jo.Jeux.unique())[0],
                 options=[{'label': str(x), 'value': x} for x in df_jo.Jeux.unique()],
                 # inline=True,
                 labelStyle={'display': 'inline-block',
-                            'background' : '#66B2FF',
+                            'background' : '#d9c47a',
                             'padding': '0.4rem 1.1rem',
                             'border-radius':'0.3rem',
                             'margin' : '0.7rem',
                             },
-            ),
+                ),
+            ], style = {'width': '100%', 'display': 'flex', 'align-items': 'center', 'justify-content': 'center'} ),
+
             html.Br(),
-            html.P("Sélectionnez le Genre de la discipline"),
-            dcc.RadioItems(
+            html.H5("Sélectionnez le Genre de la discipline"),
+            html.Div(children = [
+                dcc.RadioItems(
                         id='RadioItems_Genre',
                         value='Hommes',
-                        options= [{'label': 'Hommes', 'value': 'Hommes'}, {'label': 'Femmes', 'value': 'Femmes'},{'label': 'Mixte', 'value': 'Mixte'}],#[{'label': x, 'value': x} for x in df_jo.Genre.unique()],
+                        options= [{'label': 'Hommes', 'value': 'Hommes'}, {'label': 'Femmes', 'value': 'Femmes'},{'label': 'Mixte', 'value': 'Mixte'}],
                         labelStyle={'display': 'inline-block',
-                                    'background' : '#CCE5FF',
+                                    'background' : '#d9c47a',
                                     'padding': '0.3rem 0.5rem',
                                     'border-radius':'0.3rem',
                                     'margin' : '0.5rem',
                                     },
                         style={'font-size': 15}
-                        ),
+                        ),                
+            ], style = {'width': '100%', 'display': 'flex', 'align-items': 'center', 'justify-content': 'center'}),
+
             html.Br(),
-            html.P("Sélectionnez la discipline"),
-            dcc.Dropdown(
-                id = 'Dropdown_Discipline' ,
-                options= df_jo.Discipline.unique(),
-                placeholder= 'Sélectionnez une discipline',
-                multi= False,
-                optionHeight = 25,
-                clearable=False
+            html.H5("Sélectionnez la discipline"),
+            html.Div(children=[
+                dcc.Dropdown(
+                    id = 'Dropdown_Discipline' ,
+                    options= df_jo.Discipline.unique(),
+                    placeholder= 'Sélectionnez une discipline',
+                    multi= False,
+                    optionHeight = 25,
+                    clearable=False,
+                    style={'textAlign': 'center'}
+                ),
+            ], style = {'width': '100%', 'display': 'flex', 'align-items': 'center', 'justify-content': 'center'}),
+
+            html.Br(),
+            html.H5("Sélectionnez l'épreuve"),
+            html.Div(children=[
+                dcc.Dropdown(
+                    id='Dropdown_Epreuve',
+                    options= df_jo.Épreuve.unique(),
+                    clearable=False,
+                    optionHeight = 25,
+                    placeholder= 'Sélectionnez une épreuve',
+                    multi=False,
+                    style={'textAlign': 'center'}
+                ),
+            ], style = {'width': '100%', 'display': 'flex', 'align-items': 'center', 'justify-content': 'center'}),
+
+            html.Br(),
+            html.H5("Sélectionnez les horaires de recherche"),
+            html.Div(children = [
+                dcc.DatePickerRange(
+                    id="date-picker-select",
+                    display_format = "DD / MM / YY" ,
             ),
-            html.Br(),
-            html.P("Sélectionnez l'épreuve"),
-            dcc.Dropdown(
-                id='Dropdown_Epreuve',
-                options= df_jo.Épreuve.unique(),
-                clearable=False,
-                optionHeight = 25,
-                placeholder= 'Sélectionnez une épreuve',
-                multi=False,
-            ),
-            html.Br(),
-            html.P("Sélectionnez les horaires de recherche"),
-            dcc.DatePickerRange(
-                id="date-picker-select",
-                display_format = "DD / MM / YY" ,
-            ),
+            ], style = {'width': '100%', 'display': 'flex', 'align-items': 'center', 'justify-content': 'center'}),
+
             html.Br(),
             html.Br(),
-            html.P("Quelles sont les sessions disponibles selon ces critères ?"),
+            html.H5("Sessions disponibles selon ces critères"),
             dash_table.DataTable(id = 'listing_session_info',
                                     style_cell={'textAlign': 'center'},
                                     style_as_list_view=True, 
-                                    style_header={ 'backgroundColor': 'rgb(210, 210, 210)', 'color': 'black','fontWeight': 'bold'},
+                                    style_header={ 'backgroundColor': 'rgb(217, 196, 122)', 'color': 'black','fontWeight': 'bold'},
                                     style_cell_conditional=[{'if': {'column_id': 'Session'},'fontWeight': 'bold'}],
-                                    style_data_conditional=[ {'if': {'row_index': 'odd'},'backgroundColor': 'rgb(240, 240, 240)',}],
-                                    page_size=4
+                                    style_data_conditional=[ {'if': {'row_index': 'odd'},'backgroundColor': 'rgb(236, 220, 162)',}],
+                                    page_action='none',
+                                    style_table={'height': '170px', 'overflowY': 'auto'}
+                                    # page_size=5
                                     ),
             html.Br(),
-            html.P("Finalment, sélectionnez le code de la session"),
-            dcc.Dropdown(
+            html.Br(),
+            html.H5("Sélectionnez le code de la session pour l'analyse"),
+            html.Br(),
+            html.Div(children = [
+                dcc.Dropdown(
                     id='Dropdown_Session',
-                    # options= df_jo.Session.unique(),
                     clearable=False,
                     optionHeight = 25,
                     maxHeight = 150,
                     placeholder= 'Sélectionnez une session',
                     multi=False,
-                    ),        
+                    style={'textAlign': 'center'}
+                    ),     
+            ], style = {'width': '100%', 'display': 'flex', 'align-items': 'center', 'justify-content': 'center'}),
         ],
     ) 
 
@@ -138,11 +165,12 @@ analysis_card = html.Div(
                             html.H2( id = 'capacité_KPI'),
                             html.H2( id = 'date_KPI'),
                              ]
-                     ),
+                     ),     
             
             html.Br(),
             html.Br(),
             html.Br(),
+            
             
             html.Div(id='phases-prices-card', children=[
                     html.H4( id = 'title_session'),
@@ -150,60 +178,61 @@ analysis_card = html.Div(
                     dash_table.DataTable(id = 'listing_phase_info',
                                             style_cell={'textAlign': 'center'},
                                             style_as_list_view=True, 
-                                            style_header={ 'backgroundColor': 'rgb(210, 210, 210)', 'color': 'black','fontWeight': 'bold'},
+                                            style_header={ 'backgroundColor': 'rgb(217, 196, 122)', 'color': 'black','fontWeight': 'bold'},
                                             style_cell_conditional=[{'if': {'column_id': 'Session'},'fontWeight': 'bold'}],
-                                            style_data_conditional=[ {'if': {'row_index': 'odd'},'backgroundColor': 'rgb(240, 240, 240)',}],
-                                            #page_size=4,
-                                            #fixed_rows={'headers': True},
-                                            style_table={'overflowX': 'auto'}  
+                                            style_data_conditional=[ {'if': {'row_index': 'odd'},'backgroundColor': 'rgb(236, 220, 162)',}],
+                                            page_action='none',
+                                            style_table={'height': '300px', 'overflowY': 'auto'}
+                                            # style_table={'overflowX': 'auto'}  
+                                            # page_size=7,
                                             ),
                     dcc.Graph(id='bar_chart_prices',figure = {}),   
                 ]),                              
 
-            html.Br(),
-            
-            html.Div(id = 'restau-card', children = [
-                html.Div(id='info-restau-card', children=[
-                    
-                    html.Div(id='filter-restau-card', children=[
-                        html.H3('Filtre pour le type de restaurant'),
-                        html.H3(id='distance-restau'),
-                        dcc.Dropdown(
-                            id='Dropdown_TypeRestau',
-                            clearable=False,
-                            optionHeight = 25,
-                            maxHeight = 150,
-                            placeholder= 'Sélectionnez une session',
-                            multi=True,
-                            ),
                                     
-                        dcc.RangeSlider(id = 'RangeSlider_Distance', min=0, max=1500, value=[0, 300],
-                                        tooltip={"placement": "bottom", "always_visible": True}),
-                        
-                    ]),
-                    
-                    html.Br(),
-                    html.Br(),
-                    html.Br(),
-                    
-                    html.Div(id='analysis-restau-card', children=[
-                        html.H3('Liste des restaurants disponibles'),
-                        html.H3('Type de restaurant selon les critères'),
-                        dash_table.DataTable(id = 'listing_restau',
-                            style_cell={'textAlign': 'center'},
-                            style_as_list_view=True, 
-                            style_header={ 'backgroundColor': 'rgb(210, 210, 210)', 'color': 'black','fontWeight': 'bold'},
-                            style_cell_conditional=[{'if': {'column_id': 'Etablissement'},'fontWeight': 'bold'}],
-                            style_data_conditional=[ {'if': {'row_index': 'odd'},'backgroundColor': 'rgb(240, 240, 240)',}],
-                            page_size=4
-                            ),
-                        dcc.Graph(id='donut_chart_typeRestau',figure = {})                        
-                    ]),
+            html.Div(id='info-restau-card', children=[
+                html.Div(id='filter-restau-card', children=[
+                    html.H4('Filtre type de restaurant'),
+                    html.H4(id='distance-restau'),
+                    dcc.Dropdown(
+                        id='Dropdown_TypeRestau',
+                        clearable=False,
+                        optionHeight = 25,
+                        maxHeight = 150,
+                        placeholder= 'Sélectionnez un restaurant',
+                        multi=True,
+                        style={'textAlign': 'center'},
+                        ),
+                    html.Div(id='RangSlider_Div', children = [
+                        dcc.RangeSlider(id = 'RangeSlider_Distance', min=0, max=1500, value=[0, 600],
+                                    tooltip={"placement": "bottom", "always_visible": True}),
+                    ], style = {'width': '100%', 'display': 'flex', 'align-items': 'center', 'justify-content': 'center'})            
+ 
                     
                 ]),
-                html.Div(id='map-restau-card', children=[
-                    html.H1('map here')  
-                    ]),
+                
+                html.Br(),
+                html.Br(),
+                html.Br(),
+                
+                html.Div(id='analysis-restau-card', children=[
+                    html.H4( 'Liste des restaurants disponibles'),
+                    html.H4('Type de restaurant selon les critères'),
+                    dash_table.DataTable(id = 'listing_restau',
+                        style_cell={'textAlign': 'center'},
+                        style_as_list_view=True, 
+                        style_header={ 'backgroundColor': 'rgb(217, 196, 122)', 'color': 'black','fontWeight': 'bold'},
+                        style_cell_conditional=[{'if': {'column_id': 'Session'},'fontWeight': 'bold'}],
+                        style_data_conditional=[ {'if': {'row_index': 'odd'},'backgroundColor': 'rgb(236, 220, 162)',}],
+                        page_size=10,
+                        ),
+                    dcc.Graph(id='donut_chart_typeRestau',figure = {})                        
+                ]),
+                
+                html.H4(id='title-map'),
+                html.Div(id='map_restau', children=[
+                    dcc.Graph(id='map_chart',figure = {})
+                ], style = {'width': '100%', 'display': 'flex', 'align-items': 'center', 'justify-content': 'center'})
             ]),
         ],
     ) 
@@ -595,8 +624,17 @@ def update_first_piechart_graph(session):
     df.reset_index(inplace=True)
     df.columns = ['Category', 'Price']
     df = df.dropna()
+    category_colors = {'Catégorie_First': '#d9c67b', 'Catégorie_A': '#3865ae', 'Catégorie_B': '#2fab60', 'Catégorie_C': '#73b0e0', 
+                       'Catégorie_D': '#ea5754', 'Catégorie_E+': '#f1abc9', 'Catégorie_E': '#f1abc9',
+                       'Catégorie_First_PFR': '#d9c67b', 'Catégorie_A_PFR': '#3865ae', 'Catégorie_B_PFR': '#2fab60'}
+    
+    y_max = df['Price'].max()
+    y_max += 75
 
-    fig = px.bar(df, x='Category', y='Price', width=800, height=400)
+    fig = px.bar(df, x='Category', y='Price', width=800, height=400, color='Category', text='Price', color_discrete_map=category_colors)
+    
+    fig.update_traces(texttemplate='%{text} €', textposition='outside') # Display text outside the bars
+    fig.update_layout(yaxis=dict(range=[0, y_max]))
                                                                                                       
     return fig
 
@@ -612,7 +650,7 @@ def update_first_piechart_graph(session):
     df.reset_index(inplace=True, drop=True) 
     lieu = df.Lieu[0]
     
-    return f"Filtre pour la distance par rappport à {lieu} "
+    return f"Filtre distance à {lieu} "
 
 
 #Callback for Dropdown Options TypeRestau
@@ -702,11 +740,68 @@ def update_first_piechart_graph(session, typeRestau, distance):
     type_counts = df_restaurant['Type'].value_counts()
     
     type_counts_df = pd.DataFrame({'Type': type_counts.index, 'Count': type_counts.values})
+    
+    category_colors= {"Restau Rapide" : "#ea5754", "Traditionnelle": "#2fab60", "Débits boissons": "#73b0e0" }
+    total_value = df_restaurant['Type'].count()
 
-    fig = px.pie(type_counts_df, values='Count', names='Type', hole=0.7)
-    fig.update_layout(showlegend=False)
+    fig = px.pie(type_counts_df, values='Count', names='Type', hole=0.7, color='Type', color_discrete_map=category_colors)
+    fig.update_traces(textinfo='value')
+    fig.add_annotation(text=str(total_value) + ' restaurants', showarrow=False, font=dict(size=23))
+    #fig.update_layout(showlegend=False)
     return fig
 
+#callback title map
+@app.callback(
+    Output("title-map", "children"),
+    Input("Dropdown_Session", "value")
+)
+def update_first_piechart_graph(session):
+    
+    df = df_jo.copy()
+    df = df[df['Session'] == session]
+    df.reset_index(inplace=True, drop=True)
+    lieu = df.Lieu[0]      
+    
+    return f"Restaurants autour du {lieu} "
+
+#callback map
+@app.callback(
+    Output("map_chart", "figure"),
+    Input("Dropdown_Session", "value"),
+    Input("Dropdown_TypeRestau", "value"),
+    Input("RangeSlider_Distance", "value")
+)
+def update_first_piechart_graph(session, typeRestau, distance):
+    
+    df = df_jo.copy()
+    df = df[df['Session'] == session]
+    df.reset_index(inplace=True, drop=True)
+    lieu = df.Lieu[0]
+    longitude = df.longitude[0]  
+    latitude = df.latitude[0]    
+    data = {'Etablissement': [lieu],
+        'latitude': [latitude],
+        'longitude': [longitude]}
+    df2 = pd.DataFrame(data)                                                                     
+    
+    df_restaurant = df_restau.copy()
+    df_restaurant = df_restaurant[df_restaurant['Lieu'] == lieu]
+    df_restaurant = df_restaurant[df_restaurant['Type'].isin(typeRestau)]
+    df_restaurant = df_restaurant[(df_restaurant['distance'] >= distance[0]) & (df_restaurant['distance'] <= distance[1])]
+    df1 = df_restaurant[['Etablissement', 'latitude', 'longitude', 'Type']]
+    
+    concatenated_df = pd.concat([df1, df2], keys=['Etablissement', 'Lieu'])
+    concatenated_df['Name'] = concatenated_df.index.get_level_values(0)
+    concatenated_df['Name'] = concatenated_df.apply(lambda row: row['Type'] if row['Name'] == 'Etablissement' else row['Name'], axis=1)
+
+    
+    fig = px.scatter_mapbox(concatenated_df, lat="latitude", lon="longitude", hover_name="Etablissement", color="Name",
+                    color_discrete_map={"Restau Rapide" : "#ea5754", "Traditionnelle": "#2fab60", "Débits boissons": "#73b0e0", "Lieu": "#003561"}, zoom=13, height=600, width=1500)
+    #hover_data=["premiere_activité", "adresse"]
+    fig.update_layout(mapbox_style="open-street-map", showlegend=False)
+    fig.update_traces(marker=dict(size=12)) 
+    
+    return fig
 
 
 if __name__=='__main__':

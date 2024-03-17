@@ -192,6 +192,11 @@ body {
     color: black !important;
 }
 
+#Dropdown_TypeRestau .Select-value {
+    background-color: #d9c47a;
+    color: white;
+    }
+
 #RangeSlider_Distance .rc-slider-track {
     background-color: #d9c47a;
   }

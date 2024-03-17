@@ -66,7 +66,7 @@ generate_control_card = html.Div(
                 dcc.RadioItems(
                         id='RadioItems_Genre',
                         value='Hommes',
-                        options= [{'label': 'Hommes', 'value': 'Hommes'}, {'label': 'Femmes', 'value': 'Femmes'},{'label': 'Mixte', 'value': 'Mixte'}],#[{'label': x, 'value': x} for x in df_jo.Genre.unique()],
+                        options= [{'label': 'Hommes', 'value': 'Hommes'}, {'label': 'Femmes', 'value': 'Femmes'},{'label': 'Mixte', 'value': 'Mixte'}],
                         labelStyle={'display': 'inline-block',
                                     'background' : '#d9c47a',
                                     'padding': '0.3rem 0.5rem',
@@ -123,7 +123,9 @@ generate_control_card = html.Div(
                                     style_header={ 'backgroundColor': 'rgb(217, 196, 122)', 'color': 'black','fontWeight': 'bold'},
                                     style_cell_conditional=[{'if': {'column_id': 'Session'},'fontWeight': 'bold'}],
                                     style_data_conditional=[ {'if': {'row_index': 'odd'},'backgroundColor': 'rgb(236, 220, 162)',}],
-                                    page_size=5
+                                    page_action='none',
+                                    style_table={'height': '170px', 'overflowY': 'auto'}
+                                    # page_size=5
                                     ),
             html.Br(),
             html.Br(),
@@ -179,9 +181,10 @@ analysis_card = html.Div(
                                             style_header={ 'backgroundColor': 'rgb(217, 196, 122)', 'color': 'black','fontWeight': 'bold'},
                                             style_cell_conditional=[{'if': {'column_id': 'Session'},'fontWeight': 'bold'}],
                                             style_data_conditional=[ {'if': {'row_index': 'odd'},'backgroundColor': 'rgb(236, 220, 162)',}],
-                                            page_size=7,
-                                            #fixed_rows={'headers': True},
-                                            style_table={'overflowX': 'auto'}  
+                                            page_action='none',
+                                            style_table={'height': '300px', 'overflowY': 'auto'}
+                                            # style_table={'overflowX': 'auto'}  
+                                            # page_size=7,
                                             ),
                     dcc.Graph(id='bar_chart_prices',figure = {}),   
                 ]),                              
@@ -221,13 +224,12 @@ analysis_card = html.Div(
                         style_header={ 'backgroundColor': 'rgb(217, 196, 122)', 'color': 'black','fontWeight': 'bold'},
                         style_cell_conditional=[{'if': {'column_id': 'Session'},'fontWeight': 'bold'}],
                         style_data_conditional=[ {'if': {'row_index': 'odd'},'backgroundColor': 'rgb(236, 220, 162)',}],
-                        page_action='none',
-                        style_table={'height': '300px', 'overflowY': 'auto'}
+                        page_size=10,
                         ),
                     dcc.Graph(id='donut_chart_typeRestau',figure = {})                        
                 ]),
                 
-                html.H4('Restaurants autour du site où se déroule la session'),
+                html.H4(id='title-map'),
                 html.Div(id='map_restau', children=[
                     dcc.Graph(id='map_chart',figure = {})
                 ], style = {'width': '100%', 'display': 'flex', 'align-items': 'center', 'justify-content': 'center'})
@@ -740,11 +742,27 @@ def update_first_piechart_graph(session, typeRestau, distance):
     type_counts_df = pd.DataFrame({'Type': type_counts.index, 'Count': type_counts.values})
     
     category_colors= {"Restau Rapide" : "#ea5754", "Traditionnelle": "#2fab60", "Débits boissons": "#73b0e0" }
+    total_value = df_restaurant['Type'].count()
 
     fig = px.pie(type_counts_df, values='Count', names='Type', hole=0.7, color='Type', color_discrete_map=category_colors)
+    fig.update_traces(textinfo='value')
+    fig.add_annotation(text=str(total_value) + ' restaurants', showarrow=False, font=dict(size=23))
     #fig.update_layout(showlegend=False)
     return fig
 
+#callback title map
+@app.callback(
+    Output("title-map", "children"),
+    Input("Dropdown_Session", "value")
+)
+def update_first_piechart_graph(session):
+    
+    df = df_jo.copy()
+    df = df[df['Session'] == session]
+    df.reset_index(inplace=True, drop=True)
+    lieu = df.Lieu[0]      
+    
+    return f"Restaurants autour du {lieu} "
 
 #callback map
 @app.callback(
@@ -770,15 +788,18 @@ def update_first_piechart_graph(session, typeRestau, distance):
     df_restaurant = df_restaurant[df_restaurant['Lieu'] == lieu]
     df_restaurant = df_restaurant[df_restaurant['Type'].isin(typeRestau)]
     df_restaurant = df_restaurant[(df_restaurant['distance'] >= distance[0]) & (df_restaurant['distance'] <= distance[1])]
-    df1 = df_restaurant[['Etablissement', 'latitude', 'longitude']]
+    df1 = df_restaurant[['Etablissement', 'latitude', 'longitude', 'Type']]
     
-    concatenated_df = pd.concat([df1, df2], keys=['df1', 'df2'])
-    concatenated_df['dataset'] = concatenated_df.index.get_level_values(0)
+    concatenated_df = pd.concat([df1, df2], keys=['Etablissement', 'Lieu'])
+    concatenated_df['Name'] = concatenated_df.index.get_level_values(0)
+    concatenated_df['Name'] = concatenated_df.apply(lambda row: row['Type'] if row['Name'] == 'Etablissement' else row['Name'], axis=1)
+
     
-    fig = px.scatter_mapbox(concatenated_df, lat="latitude", lon="longitude", hover_name="Etablissement",color="dataset",
-                    color_discrete_map={"df1": "#2d94cb", "df2": "#003561"}, zoom=11, height=600, width=1500)
+    fig = px.scatter_mapbox(concatenated_df, lat="latitude", lon="longitude", hover_name="Etablissement", color="Name",
+                    color_discrete_map={"Restau Rapide" : "#ea5754", "Traditionnelle": "#2fab60", "Débits boissons": "#73b0e0", "Lieu": "#003561"}, zoom=13, height=600, width=1500)
     #hover_data=["premiere_activité", "adresse"]
     fig.update_layout(mapbox_style="open-street-map", showlegend=False)
+    fig.update_traces(marker=dict(size=12)) 
     
     return fig
 
