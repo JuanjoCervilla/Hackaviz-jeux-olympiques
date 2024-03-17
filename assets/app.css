@@ -53,6 +53,7 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    border-bottom: solid #FFFFFF;
 }
 
 .banner Img {
@@ -68,12 +69,53 @@ body {
     width: 100%;
 }
 
-
 #control-card h5, h4 {
     text-align: center;
     color: #FFFFFF;
     /* background-color: rgb(236, 220, 162); */
 }
+
+#control-card {
+    padding: 2rem;
+    background-color: #003561;
+}
+
+/* Date picker */
+#date-picker-select .DateRangePicker {
+    font-family: "Lucida Grande", "Lucida Sans", "Lucida", sans-serif;
+    position: relative;
+    display: inline-block;
+    width:100%;
+    background-color: #d9c47a;
+  }
+
+#date-picker-select .DateInput_input, .DateInput_input_1 {
+    font-family: "Lucida Grande", "Lucida Sans", "Lucida", sans-serif;
+    text-align: center;
+    Height: 34px !important;
+    Width: 100% !important;
+    padding-left: 3px !important;
+    padding-right: 3px !important;  
+    font-size: 0.9em;
+    color: #333 !important;
+    background-color: #d9c47a;
+  }
+  
+#date-picker-select .DateRangePickerInput__withBorder {
+    font-family: "Lucida Grande", "Lucida Sans", "Lucida", sans-serif;
+    background-color: #d9c47a;;
+    border-radius: 1px;
+    border: 1px solid #ccc;
+    color: #333;
+    display: table;
+    border-spacing: 0;
+    border-collapse: separate;
+    height: 36px;
+    overflow: hidden;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+    width:100%;
+    text-align: center;
+  }
 
 #analysis-card h5, h4 {
     text-align: center;
@@ -83,11 +125,6 @@ body {
 #analysis-card {
     background-color: #FFFFFF;
     padding: 2rem;  
-}
-
-#control-card {
-    padding: 2rem;
-    background-color: #003561;
 }
 
 #title-analysis-card{
@@ -102,6 +139,8 @@ body {
     padding-left: 4rem;
     padding-right: 4rem;
     justify-content: space-around;
+    border-bottom: 1px solid #003561;
+    padding-bottom: 1rem;
 }
 
 #title-indicator-card{
@@ -110,7 +149,8 @@ body {
     padding-left: 4rem;
     padding-right: 4rem;
     justify-content: space-around;
-
+    border-top: 1px solid #003561;
+    padding-top: 1rem;
 }
 
 #phases-prices-card{    
@@ -130,10 +170,31 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center; 
-    padding-left: 2rem;
+    /* padding-left: 2rem; */
+    padding: 1rem;
     gap: 2rem;
     justify-content: center;
+    border-top: solid 1px #003561;
+    border-bottom: solid 1px #003561;
 }
+
+#Dropdown_TypeRestau .Select-control {
+    background-color: #fff !important;
+    color:black;
+  }
+  
+#Dropdown_TypeRestau .Select-menu-outer {
+    background-color: #fff;
+    color: black;
+}
+
+#Dropdown_TypeRestau .Select-value-label {
+    color: black !important;
+}
+
+#RangeSlider_Distance .rc-slider-track {
+    background-color: #d9c47a;
+  }
 
 #analysis-restau-card{
     display: grid;

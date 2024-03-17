@@ -622,8 +622,17 @@ def update_first_piechart_graph(session):
     df.reset_index(inplace=True)
     df.columns = ['Category', 'Price']
     df = df.dropna()
+    category_colors = {'Catégorie_First': '#d9c67b', 'Catégorie_A': '#3865ae', 'Catégorie_B': '#2fab60', 'Catégorie_C': '#73b0e0', 
+                       'Catégorie_D': '#ea5754', 'Catégorie_E+': '#f1abc9', 'Catégorie_E': '#f1abc9',
+                       'Catégorie_First_PFR': '#d9c67b', 'Catégorie_A_PFR': '#3865ae', 'Catégorie_B_PFR': '#2fab60'}
+    
+    y_max = df['Price'].max()
+    y_max += 75
 
-    fig = px.bar(df, x='Category', y='Price', width=800, height=400)
+    fig = px.bar(df, x='Category', y='Price', width=800, height=400, color='Category', text='Price', color_discrete_map=category_colors)
+    
+    fig.update_traces(texttemplate='%{text} €', textposition='outside') # Display text outside the bars
+    fig.update_layout(yaxis=dict(range=[0, y_max]))
                                                                                                       
     return fig
 
@@ -729,8 +738,10 @@ def update_first_piechart_graph(session, typeRestau, distance):
     type_counts = df_restaurant['Type'].value_counts()
     
     type_counts_df = pd.DataFrame({'Type': type_counts.index, 'Count': type_counts.values})
+    
+    category_colors= {"Restau Rapide" : "#ea5754", "Traditionnelle": "#2fab60", "Débits boissons": "#73b0e0" }
 
-    fig = px.pie(type_counts_df, values='Count', names='Type', hole=0.7)
+    fig = px.pie(type_counts_df, values='Count', names='Type', hole=0.7, color='Type', color_discrete_map=category_colors)
     #fig.update_layout(showlegend=False)
     return fig
 
